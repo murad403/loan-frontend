@@ -69,7 +69,7 @@ const SignIn = () => {
                 Remember me
               </label>
             </div>
-            <Link className="text-sm font-medium text-yellow-500" to={"/"}>
+            <Link className="text-sm font-medium text-yellow-500" to={"/forgot-password"}>
                 Forgot password?
             </Link>
           </div>
