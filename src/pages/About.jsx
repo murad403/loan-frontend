@@ -1,10 +1,15 @@
-
+import AboutBanner from "../components/about/AboutBanner";
+import CoreValues from "../components/about/CoreValues";
+import Mission from "../components/about/Mission";
+import Vision from "../components/about/Vision";
 
 const About = () => {
     return (
         <div>
-            <h1>About Us</h1>
-            <p>We are a company dedicated to providing the best services to our customers.</p>
+            <AboutBanner></AboutBanner>
+            <Mission></Mission>
+            <Vision></Vision>
+            <CoreValues></CoreValues>
         </div>
     );
 };
