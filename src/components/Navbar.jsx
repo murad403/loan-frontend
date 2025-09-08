@@ -24,7 +24,7 @@ const Navbar = () => {
           </ul>
         </div>
         <button className="bg-red-900 rounded-sm px-2 text-white text-[13px] py-1 cursor-pointer hidden md:block">
-          <Link to="/register">Sign Up</Link>
+          <Link to="/signup">Sign Up</Link>
         </button>
 
         {/* responsive menu------------------------------------- */}
@@ -37,7 +37,7 @@ const Navbar = () => {
       </div>
       <div className={menu ? "block md:hidden" : "hidden"}>
         <div className="relative">
-          <ul className="text-[14px] text-gray-600 w-full absolute top-0 right-0 bg-gray-200 px-7 py-4">
+          <ul className="text-[14px] text-gray-600 w-full absolute top-0 right-0 bg-gray-200 px-7 py-4 z-10">
             <li>
               <NavLink to="/" onClick={() => setMenu(false)}>Home</NavLink>
             </li>
