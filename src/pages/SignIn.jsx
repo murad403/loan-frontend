@@ -81,7 +81,7 @@ const SignIn = () => {
           </button>
           <div className="flex items-center gap-2 text-sm justify-center">
             <p>New To our Platform?</p>
-            <Link className="text-red-950 font-semibold" to={"/signup"}>
+            <Link className="text-red-950 font-semibold" to={"/sign-up"}>
               Sign Up Here
             </Link>
           </div>

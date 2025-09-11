@@ -16,7 +16,7 @@ const AuthProviders = ({children}) => {
     const [loading, setLoading] = useState(true);
 
     const authInfo = {
-        user,
+        // user,
         loading,
     }
     return (

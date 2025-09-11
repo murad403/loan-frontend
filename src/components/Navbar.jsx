@@ -32,7 +32,7 @@ const Navbar = () => {
           </Link>
           : 
           <button className="bg-red-900 rounded-sm px-2 text-white text-[13px] py-1 cursor-pointer hidden md:block">
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/sign-up">Sign Up</Link>
         </button>
         }
 
@@ -54,7 +54,7 @@ const Navbar = () => {
               <NavLink to="/about" onClick={() => setMenu(false)}>About</NavLink>
             </li>
             <button className="bg-red-900 rounded-sm mt-2 px-2 text-white text-[13px] py-1 cursor-pointer">
-          <Link to="/register">Sign Up</Link>
+          <Link to="/sign-up">Sign Up</Link>
         </button>
           </ul>
         </div>
