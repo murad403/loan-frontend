@@ -3,13 +3,14 @@ import logo from "../assets/logo.png";
 import "../styles/navbar.css";
 import { RiMenu2Line } from "react-icons/ri";
 import { useState } from "react";
+import { useAuthContext } from "../providers/AuthProviders";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-
+  const {user} = useAuthContext();
   return (
     <div>
-      <div className="flex justify-between items-center py-2 bg-gray-100 px-4 md:px-16 lg:px-20">
+      <div className="flex justify-between items-center py-2 px-4 md:px-16 lg:px-20">
         <Link to="/">
           <img src={logo} alt="logo" className="w-15 md:w-18 lg:w-20" />
         </Link>
@@ -23,9 +24,17 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <button className="bg-red-900 rounded-sm px-2 text-white text-[13px] py-1 cursor-pointer hidden md:block">
+        {
+          user 
+          ? 
+          <Link to={`/profile`}>
+            <img src={logo} alt="profile img"  className="w-10 h-10 rounded-full border border-blue-700"/>
+          </Link>
+          : 
+          <button className="bg-red-900 rounded-sm px-2 text-white text-[13px] py-1 cursor-pointer hidden md:block">
           <Link to="/signup">Sign Up</Link>
         </button>
+        }
 
         {/* responsive menu------------------------------------- */}
         <button

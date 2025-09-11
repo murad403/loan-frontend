@@ -1,4 +1,5 @@
 
+
 const AboutBanner = () => {
     return (
         <div className='bg-red-950 text-center py-10 md:py-14 lg:py-20 text-white space-y-3'>

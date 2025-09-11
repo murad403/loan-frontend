@@ -3,7 +3,7 @@ import industrySolutions from "../../data/IndustrySolution.js";
 
 const IndustrySolution = () => {
   return (
-    <div className="my-7 md:my-12 lg:my-16 mx-5 md:mx-14 lg:mx-24">
+    <div className="py-7 pd:my-12 lg:py-16 px-5 md:px-14 lg:px-24 bg-gray-100">
       <div className="text-center space-y-1 md:space-y-2 lg:space-y-3">
         <h1 className="text-xl font-bold md:text-2xl lg:text-4xl text-red-950">
           Our Industry Solutions

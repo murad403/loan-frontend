@@ -4,7 +4,7 @@ import Stat from "./Stat";
 
 const Banner = () => {
   return (
-    <div className="relative mb-30 md:mb-96 lg:mb-40">
+    <div className="relative mb-30 md:mb-96 lg:mb-36">
       <div className="bg-red-900 flex justify-between flex-col md:flex-row items-center py-8 md:py-11 lg:py-17 px-5 md:px-16 lg:px-20 gap-10">
         <div className="md:space-y-3 space-y-1 w-full md:w-1/2">
           <p className="bg-white/10 text-white font-light rounded-xl text-sm px-2 backdrop-blur-xl inline-block">
