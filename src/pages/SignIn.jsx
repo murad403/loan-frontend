@@ -2,22 +2,46 @@ import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { CiLock } from "react-icons/ci";
 import { MdOutlineMail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
+
   const handleSignIn = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
     const terms = form.get("terms");
-    const signInUser = {
+    if(!email){
+      return toast.error("Email is required");
+    }
+    if(!password){
+      return toast.error("Password is required");
+    }
+    if(!terms){
+      return toast.error("Please accept the terms and conditions");
+    }
+    const loginUser = {
       email,
       password,
       terms,
     };
-    console.log(signInUser);
+    axiosPublic.post("/api/v1/user/sign-in", { loginUser })
+      .then(response =>{
+        // console.log(response?.data?.data);
+        localStorage.setItem("user", JSON.stringify(response?.data?.data));
+        toast.success(response?.data?.message);
+        navigate("/");
+      })
+      .catch(error =>{
+        toast.error(error?.response?.data?.message);
+      })
+    // console.log(loginUser);
   };
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center px-5">

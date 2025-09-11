@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 export const useAuthContext = () =>{
@@ -6,17 +6,19 @@ export const useAuthContext = () =>{
 }
 
 const AuthProviders = ({children}) => {
-    const currentUser = {
-        email: "example@example.com",
-        name: "murad",
-        id: 12,
-        pass: 1232
-    }
-    const [user, setUser] = useState(currentUser);
+    const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
+    
+    // get current target user from local storage-----------------------------------------
+    useEffect( () =>{
+        const currentUser = JSON.parse(localStorage.getItem("user"));
+        setUser(currentUser);
+        setLoading(false);
+    }, []);
 
+    // console.log(user);
     const authInfo = {
-        // user,
+        user,
         loading,
     }
     return (
