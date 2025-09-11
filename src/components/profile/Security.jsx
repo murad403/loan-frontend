@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useAuthContext } from "../../providers/AuthProviders";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const Security = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showNewPassword, setShowNewPassword] = useState(false);
     const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
+    const {user} = useAuthContext();
+    const email = user?.email;
+    const axiosPublic = useAxiosPublic();
 
     const handleChangePassword = (e) =>{
         e.preventDefault();
@@ -12,12 +18,25 @@ const Security = () => {
         const currentPassword = form.get("current-password");
         const newPassword = form.get("new-password");
         const confirmNewPassword = form.get("confirm-new-password");
+        if(newPassword !== confirmNewPassword){
+            return toast.error("Enter the same password, new password and confirm new password");
+        }
         const newUpdatedPassword = {
+            email,
             currentPassword,
             newPassword,
             confirmNewPassword
         }
-        console.log(newUpdatedPassword);
+        axiosPublic.patch("/api/v1/user/security", newUpdatedPassword)
+            .then(response =>{
+                toast.success(response.data.message);
+                // form.reset();
+            })
+            .catch(error =>{
+                // console.log(error);
+                toast.error(error?.response?.data?.message);
+            })
+        // console.log(newUpdatedPassword);
     }
   return (
     <div>
