@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuthContext } from "../../providers/AuthProviders";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import toast from "react-hot-toast";
-
+import { MdOutlineEditNote } from "react-icons/md";
 
 const PersonalInformation = () => {
     const {user} = useAuthContext();
@@ -40,7 +40,7 @@ const PersonalInformation = () => {
         <div>
             <div className='flex justify-between items-center py-2 bg-gray-200 px-5 rounded-sm'>
                 <p className='font-semibold text-md'>Personal Information</p>
-                <button onClick={() => setUpdateProfile(true)} className={`${updateProfile ? "hidden" : "block"} text-sm font-semibold cursor-pointer`}>Update Profile</button>
+                <button onClick={() => setUpdateProfile(true)} className={`${updateProfile ? "hidden" : "block"} text-sm font-semibold cursor-pointer flex items-center gap-1`}><MdOutlineEditNote size={25}/>Update Profile</button>
             </div>
             <form onSubmit={handleUpdateProfile} className='mt-5 md:space-y-3 space-y-1'>
                 <div className='flex flex-col md:flex-row gap-3'>
