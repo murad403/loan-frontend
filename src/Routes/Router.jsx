@@ -5,7 +5,10 @@ import About from "../pages/About";
 import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
 import ResetPassword from "../pages/ResetPassword";
-import Profile from "../pages/Profile";
+import ProfileRoot from "../Layout/ProfileRoot";
+import PersonalInformation from "../components/profile/PersonalInformation";
+import Security from "../components/profile/Security";
+import LoanStatus from "../components/profile/LoanStatus";
 
 
 const router = createBrowserRouter([
@@ -23,7 +26,21 @@ const router = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <Profile></Profile>
+                element: <ProfileRoot></ProfileRoot>,
+                children: [
+                    {
+                        path: "/profile",
+                        element: <PersonalInformation></PersonalInformation>
+                    },
+                    {
+                        path: "/profile/security",
+                        element: <Security></Security>
+                    },
+                    {
+                        path: "/profile/loan-status",
+                        element: <LoanStatus></LoanStatus>
+                    }
+                ]
             }
         ]
     },

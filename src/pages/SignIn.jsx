@@ -37,6 +37,7 @@ const SignIn = () => {
         localStorage.setItem("user", JSON.stringify(response?.data?.data));
         toast.success(response?.data?.message);
         navigate("/");
+        window.location.reload();
       })
       .catch(error =>{
         toast.error(error?.response?.data?.message);
