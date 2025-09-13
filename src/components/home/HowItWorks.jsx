@@ -1,5 +1,5 @@
-import React from "react";
 import howItWorksData from "../../data/HowItWorks";
+import {Link} from "react-router-dom";
 
 const HowItWorks = () => {
   return (
@@ -28,7 +28,9 @@ const HowItWorks = () => {
         <div className="bg-[#DBCBB9] p-2 md:p-4 lg:p-6 rounded-lg mt-10 md:mt-16 lg:mt-20 text-center space-y-2 md:space-y-3 lg:space-y-4 py-6 md:py-8 lg:py-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-red-950">Ready to discover your credit potential?</h2>
           <p className="text-gray-700">Get your credit score now and see what credit limit you qualify for. It's quick, <br /> free, and completely transparent.</p>
-          <button className="bg-red-950 text-gray-400 py-2 px-4 rounded-md text-sm cursor-pointer">Get Your Credit Score</button>
+          <Link to={'/complete-profile'}>
+            <button className="bg-red-950 text-gray-400 py-2 px-4 rounded-md text-sm cursor-pointer">Get Your Credit Score</button>
+          </Link>
         </div>
       </div>
     </div>

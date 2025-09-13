@@ -57,7 +57,7 @@ const SignUp = () => {
                     <div>
                         <label className='text-sm font-semibold text-red-900'>Phone Number</label>
                         <div className="relative">
-                            <input type="text" name='phone' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Enter your phone number" required/>
+                            <input type="number" name='phone' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Enter your phone number" required/>
                             <MdOutlinePhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                     </div>

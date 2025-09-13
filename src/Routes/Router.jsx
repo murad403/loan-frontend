@@ -9,6 +9,7 @@ import ProfileRoot from "../Layout/ProfileRoot";
 import PersonalInformation from "../components/profile/PersonalInformation";
 import Security from "../components/profile/Security";
 import LoanStatus from "../components/profile/LoanStatus";
+import CompleteProfile from "../pages/CompleteProfile";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
     {
         path: "/forgot-password",
         element: <ResetPassword></ResetPassword>
+    },
+    {
+        path: "/complete-profile",
+        element: <CompleteProfile></CompleteProfile>
     }
 ])
 
