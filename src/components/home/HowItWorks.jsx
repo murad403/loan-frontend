@@ -1,7 +1,10 @@
 import howItWorksData from "../../data/HowItWorks";
 import {Link} from "react-router-dom";
+import useProfileInfo from "../../hooks/useProfileInfo";
 
 const HowItWorks = () => {
+  const {profileInfo} = useProfileInfo();
+  // console.log(profileInfo);
   return (
     <div className="bg-gray-100 py-3 md:py-5 lg:py-7">
       <div className="my-7 md:my-12 lg:my-16 mx-5 md:mx-14 lg:mx-24">
@@ -28,7 +31,7 @@ const HowItWorks = () => {
         <div className="bg-[#DBCBB9] p-2 md:p-4 lg:p-6 rounded-lg mt-10 md:mt-16 lg:mt-20 text-center space-y-2 md:space-y-3 lg:space-y-4 py-6 md:py-8 lg:py-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-red-950">Ready to discover your credit potential?</h2>
           <p className="text-gray-700">Get your credit score now and see what credit limit you qualify for. It's quick, <br /> free, and completely transparent.</p>
-          <Link to={'/complete-profile'}>
+          <Link to={profileInfo ? "/dashboard" : "/complete-profile"}>
             <button className="bg-red-950 text-gray-400 py-2 px-4 rounded-md text-sm cursor-pointer">Get Your Credit Score</button>
           </Link>
         </div>

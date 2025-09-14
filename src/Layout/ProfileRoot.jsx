@@ -5,12 +5,15 @@ import { CiCreditCardOff, CiLock } from 'react-icons/ci';
 import { PiSignOutFill } from "react-icons/pi";
 import { FiUser } from 'react-icons/fi';
 import { useState } from 'react';
+import useProfileInfo from '../hooks/useProfileInfo';
 
 const ProfileRoot = () => {
     const navigate = useNavigate();
     const {user} = useAuthContext();
     const {pathname} = useLocation();
     const [isActive, setIsActive] = useState(pathname);
+    const {profileInfo} = useProfileInfo();
+    // console.log(profileInfo?.data?.personalInfo?.firstName);
     const handleSignOut = () =>{
         localStorage.removeItem("user");
         navigate('/');
@@ -29,7 +32,7 @@ const ProfileRoot = () => {
                     <div className='flex items-center gap-6 border-b border-gray-300 pb-6'>
                         <img src={logo} alt="Logo" className='w-12 h-12 rounded-full border border-blue-500'/>
                         <div>
-                            <h2 className='text-xl font-semibold'>{`${user?.personalInformation?.firstName} ${user?.personalInformation?.lastName}`}</h2>
+                            <h2 className='text-xl font-semibold'>{`${profileInfo?.data?.personalInfo?.firstName} ${profileInfo?.data?.personalInfo?.lastName}`}</h2>
                             <p className='text-gray-700 text-sm'>{user?.email}</p>
                         </div>
                     </div>

@@ -10,6 +10,7 @@ import PersonalInformation from "../components/profile/PersonalInformation";
 import Security from "../components/profile/Security";
 import LoanStatus from "../components/profile/LoanStatus";
 import CompleteProfile from "../pages/CompleteProfile";
+import ClientDashboard from "../pages/ClientDashboard";
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <About></About>
+            },
+            {
+                path: "dashboard",
+                element: <ClientDashboard></ClientDashboard>
             },
             {
                 path: "/profile",

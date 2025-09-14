@@ -1,0 +1,54 @@
+import React, { useState } from 'react';
+import { Flex, Progress, Slider, Tag, Typography } from 'antd';
+
+const CreditScore = () => {
+    const [stepsCount, setStepsCount] = useState(5);
+  const [stepsGap, setStepsGap] = useState(7);
+    return (
+        <div>
+            <div className='bg-gray-200 p-4 flex justify-between items-center rounded-t-sm'>
+                <h3 className='font-bold'>Credit Score</h3>
+                <p className='text-sm text-gray-700'>Updated today</p>
+            </div>
+            <div className='px-4 py-10'>
+                <div className='flex justify-center'>
+                    <Progress type="dashboard" gapDegree={120} steps={10} percent={90} trailColor="#D3D3D3" strokeColor={"green"} strokeWidth={12} width={250} format={(percent) => (
+                        <div style={{ textAlign: "center" }}>
+                            <div style={{ fontSize: "10px", color: "green", backgroundColor: "#D3D3D3", display: "inline-block", padding: "3px 9px" , borderRadius: "10px"}}>Excellent</div>
+                            <div>{percent}</div>
+                         </div>
+                    )}/>
+                </div>
+                <p className='text-center text-sm text-gray-700 border-b border-gray-300 md:pb-16 pb-10 '>Your credit score is in the Excellent range. This indicates excellent creditworthiness.</p>
+                <div className='mt-10 md:mt-16'>
+                    <h2 className='text-xl text-center text-red-950'>Factors affecting your score</h2>
+                    <div className='mt-9 md:space-y-7 space-y-2'>
+                        <div>
+                            <div className='flex items-center justify-between'>
+                                <h3 className='text-red-950 font-semibold text-[14px]'>Annual Income (FCFA)</h3>
+                                <p className='text-sm text-gray-700'>30/30</p>
+                            </div>
+                            <progress class="progress text-green-500 w-full" value="50" max="50"></progress>
+                        </div>
+                        <div>
+                            <div className='flex items-center justify-between'>
+                                <h3 className='text-red-950 font-semibold text-[14px]'>Electricity Bill (FCFA)</h3>
+                                <p className='text-sm text-gray-700'>30/30</p>
+                            </div>
+                            <progress class="progress text-blue-500 w-full" value="50" max="50"></progress>
+                        </div>
+                        <div>
+                            <div className='flex items-center justify-between'>
+                                <h3 className='text-red-950 font-semibold text-[14px]'>Mobile Money Balance (FCFA)</h3>
+                                <p className='text-sm text-gray-700'>30/30</p>
+                            </div>
+                            <progress class="progress text-green-500 w-full" value="50" max="50"></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default CreditScore;
