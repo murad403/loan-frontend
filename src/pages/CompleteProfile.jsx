@@ -1,56 +1,21 @@
 import React, { useState } from "react";
 import { PiArrowElbowRightLight } from "react-icons/pi";
-
-
-// Step 1: Personal Form
-const PersonalForm = () => (
-  <div className="space-y-4">
-    <h2 className="text-xl font-bold">Personal Information</h2>
-    <input
-      type="text"
-      placeholder="Enter your name"
-      className="w-full border p-2 rounded"
-    />
-  </div>
-);
-
-// Step 2: Contact Form
-const ContactForm = () => (
-  <div className="space-y-4">
-    <h2 className="text-xl font-bold">Contact Information</h2>
-    <input
-      type="email"
-      placeholder="Enter your email"
-      className="w-full border p-2 rounded"
-    />
-    <input
-      type="text"
-      placeholder="Enter your phone number"
-      className="w-full border p-2 rounded"
-    />
-  </div>
-);
-
-// Step 3: Financial Form
-const FinancialForm = () => (
-  <div className="space-y-4">
-    <h2 className="text-xl font-bold">Financial Information</h2>
-    <input
-      type="number"
-      placeholder="Enter your salary"
-      className="w-full border p-2 rounded"
-    />
-  </div>
-);
-
+import PersonalInfo from "../components/completeProfile/PersonalInfo";
+import ContactInfo from "../components/completeProfile/ContactInfo";
+import FinancialInfo from "../components/completeProfile/FinancialInfo";
 
 
 const CompleteProfile = () => {
   const [step, setStep] = useState(1);
+  const [personalInfo, setPersonalInfo] = useState(null);
+  const [contactInfo, setContactInfo] = useState(null);
+  
+  // console.log(personalInfo, contactInfo);
+
   const steps = [
-    { id: 1, label: "Personal", component: <PersonalForm /> },
-    { id: 2, label: "Contact", component: <ContactForm /> },
-    { id: 3, label: "Financial", component: <FinancialForm /> },
+    { id: 1, label: "Personal", component: <PersonalInfo step={step} setStep={setStep} setPersonalInfo={setPersonalInfo}/> },
+    { id: 2, label: "Contact", component: <ContactInfo step={step} setStep={setStep} setContactInfo={setContactInfo}/> },
+    { id: 3, label: "Financial", component: <FinancialInfo step={step} setStep={setStep} personalInfo={personalInfo} contactInfo={contactInfo}/> },
   ];
 
   return (
@@ -60,8 +25,9 @@ const CompleteProfile = () => {
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-red-950 font-semibold">Complete Your Profile</h2>
             <p className="text-sm text-gray-700">Please provide accurate information to get the most accurate credit rating</p>
         </div>
+
       <div className="relative mb-8">
-        {/* Horizontal Line */}
+        {/*  Line */}
         <div className="absolute top-3 left-0 right-0 flex justify-between items-center">
           {steps.slice(0, -1).map((s, index) => (
             <div
@@ -73,17 +39,17 @@ const CompleteProfile = () => {
           ))}
         </div>
 
-        {/* Step Circles */}
+        {/*Circles */}
         <div className="flex justify-between relative z-10">
           {steps.map((s) => (
             <div key={s.id} className="flex flex-col items-center w-full">
               <div
-                className={`w-7 h-7 flex items-center justify-center rounded-full bg-gray-30 transition-colors duration-300 bg-gray-300
+                className={`w-8 h-8 flex items-center justify-center rounded-full bg-gray-30 transition-colors duration-300 bg-gray-300
                 ${
                   step > s.id
                     ? "bg-red-950 text-white"
                     : step === s.id
-                    ? "bg-gray-300 text-white"
+                    ? "bg-red-950 text-white"
                     : "border-gray-400 text-gray-600"
                 }`}
               >
@@ -95,7 +61,7 @@ const CompleteProfile = () => {
               </div>
               <p
                 className={`mt-2 text-sm ${
-                  step >= s.id ? "font-bold text-blue-600" : "text-gray-600"
+                  step >= s.id ? "font-bold text-red-950" : "text-gray-600"
                 }`}
               >
                 {s.label}
@@ -105,26 +71,35 @@ const CompleteProfile = () => {
         </div>
       </div>
 
-      {/* Render Current Step */}
+      {/* current component */}
       <div className="mb-8">{steps.find((s) => s.id === step).component}</div>
 
       {/* Buttons */}
-      <div className="flex justify-between">
+      {/* <div className="flex justify-between">
         <button
           onClick={() => setStep((prev) => prev - 1)}
           disabled={step === 1}
-          className="px-4 py-2 rounded bg-gray-300 disabled:opacity-50"
+          className="px-4 py-2 rounded bg-gray-300 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
         >
-          Previous
+          <MdArrowBackIosNew />Back
         </button>
+        {
+          step === 3 
+          ?
+          <button
+          className="px-4 py-2 rounded bg-red-950 text-white disabled:opacity-50 cursor-pointer"
+        >
+          Submit Application
+        </button> :
         <button
           onClick={() => setStep((prev) => prev + 1)}
-          disabled={step === steps.length}
-          className="px-4 py-2 rounded bg-red-950 text-white disabled:opacity-50"
+          type="submit"
+          className="px-4 py-2 rounded bg-red-950 text-white disabled:opacity-50 cursor-pointer"
         >
           Next
         </button>
-      </div>
+        }
+      </div> */}
       </div>
     </div>
   );
