@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
 import { Flex, Progress, Slider, Tag, Typography } from 'antd';
 
-const CreditScore = () => {
-    const [stepsCount, setStepsCount] = useState(5);
-  const [stepsGap, setStepsGap] = useState(7);
+const CreditScore = ({creditInfo}) => {
     return (
         <div>
             <div className='bg-gray-200 p-4 flex justify-between items-center rounded-t-sm'>
@@ -12,10 +9,10 @@ const CreditScore = () => {
             </div>
             <div className='px-4 py-10'>
                 <div className='flex justify-center'>
-                    <Progress type="dashboard" gapDegree={120} steps={10} percent={90} trailColor="#D3D3D3" strokeColor={"green"} strokeWidth={12} width={250} format={(percent) => (
+                    <Progress type="dashboard" gapDegree={120} steps={10} percent={creditInfo?.creditScore} trailColor="#D3D3D3" strokeColor={"green"} strokeWidth={12} size={250} format={() => (
                         <div style={{ textAlign: "center" }}>
-                            <div style={{ fontSize: "10px", color: "green", backgroundColor: "#D3D3D3", display: "inline-block", padding: "3px 9px" , borderRadius: "10px"}}>Excellent</div>
-                            <div>{percent}</div>
+                            <div style={{ fontSize: "10px", color: "green", backgroundColor: "#D3D3D3", display: "inline-block", padding: "3px 9px" , borderRadius: "10px"}}>{creditInfo?.creditTag}</div>
+                            <div>{creditInfo?.creditScore}</div>
                          </div>
                     )}/>
                 </div>
@@ -28,21 +25,21 @@ const CreditScore = () => {
                                 <h3 className='text-red-950 font-semibold text-[14px]'>Annual Income (FCFA)</h3>
                                 <p className='text-sm text-gray-700'>30/30</p>
                             </div>
-                            <progress class="progress text-green-500 w-full" value="50" max="50"></progress>
+                            <progress className="progress text-green-500 w-full" value="50" max="50"></progress>
                         </div>
                         <div>
                             <div className='flex items-center justify-between'>
                                 <h3 className='text-red-950 font-semibold text-[14px]'>Electricity Bill (FCFA)</h3>
                                 <p className='text-sm text-gray-700'>30/30</p>
                             </div>
-                            <progress class="progress text-blue-500 w-full" value="50" max="50"></progress>
+                            <progress className="progress text-blue-500 w-full" value="50" max="50"></progress>
                         </div>
                         <div>
                             <div className='flex items-center justify-between'>
                                 <h3 className='text-red-950 font-semibold text-[14px]'>Mobile Money Balance (FCFA)</h3>
                                 <p className='text-sm text-gray-700'>30/30</p>
                             </div>
-                            <progress class="progress text-green-500 w-full" value="50" max="50"></progress>
+                            <progress className="progress text-green-500 w-full" value="50" max="50"></progress>
                         </div>
                     </div>
                 </div>
