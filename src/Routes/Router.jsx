@@ -11,6 +11,9 @@ import Security from "../components/profile/Security";
 import LoanStatus from "../components/profile/LoanStatus";
 import CompleteProfile from "../pages/CompleteProfile";
 import ClientDashboard from "../pages/ClientDashboard";
+import LenderRoot from "../Layout/LenderRoot";
+import LenderDashBoard from "../pages/LenderDashBoard";
+import Settings from "../pages/Settings";
 
 
 const router = createBrowserRouter([
@@ -65,6 +68,20 @@ const router = createBrowserRouter([
     {
         path: "/complete-profile",
         element: <CompleteProfile></CompleteProfile>
+    },
+    {
+        path: "/lender",
+        element: <LenderRoot></LenderRoot>,
+        children: [
+            {
+                path: "/lender",
+                element: <LenderDashBoard></LenderDashBoard>
+            },
+            {
+                path: "/lender/settings",
+                element: <Settings></Settings>
+            }
+        ]
     }
 ])
 

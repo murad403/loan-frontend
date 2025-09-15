@@ -1,11 +1,35 @@
 import { TfiMoney } from "react-icons/tfi";
+import { useAuthContext } from "../../providers/AuthProviders";
+import useProfileInfo from "../../hooks/useProfileInfo";
 
 const CreditLimit = ({fafcBalance, creditInfo}) => {
+    const {user} = useAuthContext();
+    const {profileInfo} = useProfileInfo();
+    const personalInfo = profileInfo?.data?.personalInfo;
+    const contactInfo = profileInfo?.data?.contactInfo;
+    const financialInfo = profileInfo?.data?.financialInfo;
+    // console.log(creditInfo);
+
     const handleSubmitApplication = e =>{
         e.preventDefault(0);
         const form = new FormData(e.target);
         const loanAmount = form.get("loan-amount");
-        console.log(loanAmount);
+        const clientName = personalInfo?.firstName + " " + personalInfo?.lastName;
+        const lacation = `${contactInfo?.address}, ${contactInfo?.city}, ${contactInfo?.state}`
+        const clientInfo = {
+            status: "pending",
+            creditInfo: {
+                clientName, dateOfBirth: personalInfo?.dateOfBirth, email: user?.email, phone: user?.phone, gender: personalInfo?.gender,
+            lacation
+            },
+            financialInfo: {
+                loanAmount: parseInt(loanAmount), annualIncome: financialInfo?.annualIncome, existingLoan: financialInfo?.existingLoan,
+                valueOfLandOwnership: financialInfo?.valueOfLandOwnership, mobileMoneyBalance: financialInfo?.mobileMoneyBalance
+            },
+            creditScore: creditInfo?.creditScore
+
+        }
+        console.log(clientInfo);
     }
     // console.log(fafcBalance);
     return (
@@ -38,14 +62,14 @@ const CreditLimit = ({fafcBalance, creditInfo}) => {
                         <h4 className="text-[14px] font-semibold text-gray-700">FCFA 10,000</h4>
                     </div>
                 </div>
-                <div className="mt-5 flex items-center gap-3">
+                <form onSubmit={handleSubmitApplication} className="mt-5">
+                    <div className="mt-5 flex items-center gap-3">
                     <input type="checkbox" required name="terms"/>
                     <label htmlFor="" className="text-sm text-gray-700">I agree to share my data with partner financial insituations for my credit application</label>
                 </div>
-                <form onSubmit={handleSubmitApplication} className="mt-5">
-                    <div className="space-y-2">
+                    <div className="space-y-2 mt-4">
                         <label htmlFor="" className="block text-gray-600">Enter Loan Amount</label>
-                        <input type="number" name="loan-amount" className="appearance-none outline-none border border-gray-400 rounded-sm py-2 px-3 w-full" placeholder="Enter your amount"/>
+                        <input type="number" name="loan-amount" required className="appearance-none outline-none border border-gray-400 rounded-sm py-2 px-3 w-full" placeholder="Enter your amount"/>
                     </div>
                     <div className="flex justify-center items-center mt-5">
                         <button type="submit" className="py-[6px] px-3 bg-red-950 cursor-pointer rounded-sm text-sm text-gray-300">Submit Application</button>
