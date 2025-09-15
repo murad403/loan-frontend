@@ -2,7 +2,7 @@ import { TfiMoney } from "react-icons/tfi";
 import { BiWallet } from "react-icons/bi";
 import { VscGraph } from "react-icons/vsc";
 
-const FinancialSummary = () => {
+const FinancialSummary = ({financialInfo, debitToIncomeRatio}) => {
     return (
         <div>
             <h3 className='bg-gray-200 p-4 font-bold rounded-t-sm'>Financial Summary</h3>
@@ -13,7 +13,7 @@ const FinancialSummary = () => {
                     </div>
                     <div>
                         <p className="text-sm text-gray-700">Annual income</p>
-                        <h3 className="text-gray-900 text-[15px]">FCFA 500,000</h3>
+                        <h3 className="text-gray-900 text-[15px]">FCFA {financialInfo?.annualIncome.toLocaleString()}</h3>
                     </div>
                 </div>
                 <div className="bg-gray-50 rounded-sm items-center p-3 w-full flex gap-2 border border-gray-300">
@@ -22,7 +22,7 @@ const FinancialSummary = () => {
                     </div>
                     <div>
                         <p className="text-sm text-gray-700">Value of Land ownership</p>
-                        <h3 className="text-gray-900 text-[15px]">FCFA 500,000</h3>
+                        <h3 className="text-gray-900 text-[15px]">FCFA {financialInfo?.valueOfLandOwnership.toLocaleString()}</h3>
                     </div>
                 </div>
                 <div className="bg-gray-50 rounded-sm items-center p-3 w-full flex gap-2 border border-gray-300">
@@ -31,7 +31,7 @@ const FinancialSummary = () => {
                     </div>
                     <div>
                         <p className="text-sm text-gray-700">Debit to income Ratio</p>
-                        <h3 className="text-gray-900 text-[15px]">FCFA 17/17</h3>
+                        <h3 className="text-gray-900 text-[15px]">FCFA {debitToIncomeRatio}/17</h3>
                     </div>
                 </div>
             </div>

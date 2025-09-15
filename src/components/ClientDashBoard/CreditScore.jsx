@@ -1,6 +1,6 @@
 import { Flex, Progress, Slider, Tag, Typography } from 'antd';
 
-const CreditScore = ({creditInfo}) => {
+const CreditScore = ({creditInfo, factorsAffectingScore}) => {
     return (
         <div>
             <div className='bg-gray-200 p-4 flex justify-between items-center rounded-t-sm'>
@@ -23,23 +23,23 @@ const CreditScore = ({creditInfo}) => {
                         <div>
                             <div className='flex items-center justify-between'>
                                 <h3 className='text-red-950 font-semibold text-[14px]'>Annual Income (FCFA)</h3>
-                                <p className='text-sm text-gray-700'>30/30</p>
+                                <p className='text-sm text-gray-700'>{factorsAffectingScore?.annualIncome}/30</p>
                             </div>
-                            <progress className="progress text-green-500 w-full" value="50" max="50"></progress>
+                            <progress className="progress text-green-500 w-full" value={factorsAffectingScore?.annualIncome} max="30"></progress>
                         </div>
                         <div>
                             <div className='flex items-center justify-between'>
                                 <h3 className='text-red-950 font-semibold text-[14px]'>Electricity Bill (FCFA)</h3>
-                                <p className='text-sm text-gray-700'>30/30</p>
+                                <p className='text-sm text-gray-700'>{factorsAffectingScore?.electricityBill}/30</p>
                             </div>
-                            <progress className="progress text-blue-500 w-full" value="50" max="50"></progress>
+                            <progress className="progress text-blue-500 w-full" value={factorsAffectingScore?.electricityBill} max="30"></progress>
                         </div>
                         <div>
                             <div className='flex items-center justify-between'>
                                 <h3 className='text-red-950 font-semibold text-[14px]'>Mobile Money Balance (FCFA)</h3>
-                                <p className='text-sm text-gray-700'>30/30</p>
+                                <p className='text-sm text-gray-700'>{factorsAffectingScore?.mobileMoneyBalance}/30</p>
                             </div>
-                            <progress className="progress text-green-500 w-full" value="50" max="50"></progress>
+                            <progress className="progress text-green-500 w-full" value={factorsAffectingScore?.mobileMoneyBalance} max="30"></progress>
                         </div>
                     </div>
                 </div>
