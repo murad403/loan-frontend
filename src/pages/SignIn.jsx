@@ -33,7 +33,7 @@ const SignIn = () => {
     };
     axiosPublic.post("/api/v1/user/sign-in", { loginUser })
       .then(response =>{
-        console.log(response);
+        // console.log(response);
         localStorage.setItem("user", JSON.stringify(response?.data?.data));
         toast.success(response?.data?.message);
         navigate("/");

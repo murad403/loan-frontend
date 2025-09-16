@@ -1,6 +1,8 @@
 import { TfiMoney } from "react-icons/tfi";
 import { useAuthContext } from "../../providers/AuthProviders";
 import useProfileInfo from "../../hooks/useProfileInfo";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const CreditLimit = ({fafcBalance, creditInfo}) => {
     const {user} = useAuthContext();
@@ -8,6 +10,7 @@ const CreditLimit = ({fafcBalance, creditInfo}) => {
     const personalInfo = profileInfo?.data?.personalInfo;
     const contactInfo = profileInfo?.data?.contactInfo;
     const financialInfo = profileInfo?.data?.financialInfo;
+    const axiosPublic = useAxiosPublic();
     // console.log(creditInfo);
 
     const handleSubmitApplication = e =>{
@@ -15,7 +18,7 @@ const CreditLimit = ({fafcBalance, creditInfo}) => {
         const form = new FormData(e.target);
         const loanAmount = form.get("loan-amount");
         const clientName = personalInfo?.firstName + " " + personalInfo?.lastName;
-        const lacation = `${contactInfo?.address}, ${contactInfo?.city}, ${contactInfo?.state}`
+        const lacation = `${contactInfo?.city}, ${contactInfo?.state}`
         const clientInfo = {
             status: "pending",
             email: user?.email,
@@ -30,7 +33,14 @@ const CreditLimit = ({fafcBalance, creditInfo}) => {
             
 
         }
-        console.log(clientInfo);
+        // console.log(clientInfo);
+        axiosPublic.post('/api/v1/creditRequest', {clientInfo})
+            .then(response =>{
+                toast.success(response?.data?.message);
+            })
+            .catch(error =>{
+                toast.error(error?.response?.data?.message);
+            })
     }
     // console.log(fafcBalance);
     return (

@@ -3,12 +3,14 @@ import { MdArrowBackIosNew } from "react-icons/md";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useAuthContext } from "../../providers/AuthProviders";
 import toast from "react-hot-toast";
+import {useNavigate} from "react-router-dom";
 
 const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
   const [existingLoan, setExistingLoan] = useState(null);
   const axiosPublic = useAxiosPublic();
   const {user} = useAuthContext();
   const userId = user?._id;
+  const navigate = useNavigate();
   // console.log(userId);
   // console.log(personalInfo, contactInfo);
 
@@ -31,6 +33,7 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
     axiosPublic.patch(`/api/v1/profile/${userId}`, profileInfo)
       .then(response =>{
         toast.success(response?.data?.message);
+        navigate('/dashboard')
       })
       .catch(error =>{
         toast.error(error?.response?.data?.message);
