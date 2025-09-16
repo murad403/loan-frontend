@@ -18,15 +18,16 @@ const CreditLimit = ({fafcBalance, creditInfo}) => {
         const lacation = `${contactInfo?.address}, ${contactInfo?.city}, ${contactInfo?.state}`
         const clientInfo = {
             status: "pending",
+            email: user?.email,
             creditInfo: {
-                clientName, dateOfBirth: personalInfo?.dateOfBirth, email: user?.email, phone: user?.phone, gender: personalInfo?.gender,
+                clientName, dateOfBirth: personalInfo?.dateOfBirth, phone: user?.phone, gender: personalInfo?.gender,
             lacation
             },
             financialInfo: {
                 loanAmount: parseInt(loanAmount), annualIncome: financialInfo?.annualIncome, existingLoan: financialInfo?.existingLoan,
-                valueOfLandOwnership: financialInfo?.valueOfLandOwnership, mobileMoneyBalance: financialInfo?.mobileMoneyBalance
-            },
-            creditScore: creditInfo?.creditScore
+                valueOfLandOwnership: financialInfo?.valueOfLandOwnership, mobileMoneyBalance: financialInfo?.mobileMoneyBalance, creditScore: creditInfo?.creditScore
+            }
+            
 
         }
         console.log(clientInfo);

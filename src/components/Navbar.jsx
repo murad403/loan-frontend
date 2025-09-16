@@ -24,7 +24,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {
+        <div className="md:block hidden">
+          {
           user 
           ? 
           <Link to={`/profile`}>
@@ -35,6 +36,7 @@ const Navbar = () => {
           <Link to="/sign-up">Sign Up</Link>
         </button>
         }
+        </div>
 
         {/* responsive menu------------------------------------- */}
         <button
@@ -53,9 +55,17 @@ const Navbar = () => {
             <li>
               <NavLink to="/about" onClick={() => setMenu(false)}>About</NavLink>
             </li>
-            <button className="bg-red-900 rounded-sm mt-2 px-2 text-white text-[13px] py-1 cursor-pointer">
+            {
+          user 
+          ? 
+          <Link onClick={() => setMenu(false)} to={`/profile`}>
+            <img src={logo} alt="profile img"  className="w-10 h-10 rounded-full border border-blue-700"/>
+          </Link>
+          : 
+          <button className="bg-red-900 rounded-sm px-2 text-white text-[13px] py-1 cursor-pointer hidden md:block">
           <Link to="/sign-up">Sign Up</Link>
         </button>
+        }
           </ul>
         </div>
       </div>

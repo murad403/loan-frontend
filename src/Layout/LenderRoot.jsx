@@ -10,8 +10,8 @@ const LenderRoot = () => {
   // console.log(pathname);
   const [isActive, setIsActive] = useState(pathname);
   return (
-    <div className="flex gap-7 bg-gray-100">
-      <div className="w-[30%] bg-red-950 px-4 rounded-tr-3xl rounded-br-3xl">
+    <div className="flex flex-col md:flex-row gap-7 bg-gray-100">
+      <div className="md:w-[30%] w-full bg-red-950 px-4 md:rounded-tr-3xl md:rounded-br-3xl">
         <div className="flex justify-center mt-5">
             <img className="bg-white p-2 rounded-xl" src={logo} alt="Logo" />
         </div>
@@ -36,11 +36,12 @@ const LenderRoot = () => {
             ))}
           </ul>
         </div>
-        <div className='mt-10'>
+        <div className='mt-10 pb-7'>
                         <button className='flex items-center gap-3 font-medium text-red-600 cursor-pointer text-[16px]'><PiSignOutFill size={19}/>Sign Out</button>
                     </div>
       </div>
-      <div className="w-full py-10 min-h-screen">
+      <div className="w-full md:py-10 py-4 px-4 min-h-screen">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-red-950 md:mb-5 mb-3">CreditFrist-Dashboard</h2>
         <Outlet></Outlet>
       </div>
     </div>
