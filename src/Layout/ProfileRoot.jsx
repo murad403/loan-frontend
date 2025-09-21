@@ -51,7 +51,7 @@ const ProfileRoot = () => {
                         <button onClick={handleSignOut} className='flex items-center gap-3 font-medium text-red-600 cursor-pointer text-[16px]'><PiSignOutFill size={19}/>Sign Out</button>
                     </div>
                 </div>
-                <div className='w-full bg-white rounded-sm px-3 py-5 shadow-md'>
+                <div className='w-full'>
                     <Outlet></Outlet>
                 </div>
             </div>

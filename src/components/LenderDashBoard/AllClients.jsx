@@ -28,7 +28,7 @@ const AllClients = ({allClients}) => {
                   <td>{client?.creditInfo?.lacation}</td>
                   <td>{client?.financialInfo?.creditScore}/100</td>
                   <td>${client?.financialInfo?.loanAmount}</td>
-                  <td><span className="text-[11px] py-[2px] bg-yellow-200 rounded-xl px-2 text-yellow-800">{client?.status}</span></td>
+                  <td><span className={`text-[11px] py-[2px]  rounded-xl px-2  ${client?.status === "approve" ? "text-green-700 bg-green-200" : client?.status === "reject" ? "text-red-700 bg-red-200" : "bg-yellow-200 text-yellow-800"}`}>{client?.status}</span></td>
                   <td>
                     <button onClick={()=>{document.getElementById('my_modal_3').showModal(); setActionId(client?._id)}} className="cursor-pointer">
                       <IoEyeOutline size={18}/>

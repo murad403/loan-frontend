@@ -19,13 +19,13 @@ const LenderCreditScore = ({financialInfo}) => {
                          </div>
                     )}/>
                 </div>
-                <div className='md:mt-9 mt-4 md:space-y-5 space-y-2'>
+                <div className='mt-4 md:space-y-5 space-y-2'>
                         <div>
                             <div className='flex items-center justify-between'>
                                 <h3 className='text-red-950 font-semibold text-[14px]'>Annual Income (FCFA)</h3>
                                 <p className='text-sm text-gray-700'>{annualIncomeScore}%</p>
                             </div>
-                            <progress className="progress text-green-500 w-full" value={annualIncomeScore} max="100"></progress>
+                            <progress className="progress text-green-500 w-full" value={`${annualIncomeScore}`} max="100"></progress>
                         </div>
                         <div>
                             <div className='flex items-center justify-between'>

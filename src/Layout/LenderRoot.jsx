@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { CiSettings } from "react-icons/ci";
 import { useState } from "react";
@@ -8,13 +8,19 @@ import { PiSignOutFill } from "react-icons/pi";
 const LenderRoot = () => {
   const { pathname } = useLocation();
   // console.log(pathname);
+  const navigate = useNavigate();
   const [isActive, setIsActive] = useState(pathname);
+  const handleSignOut = () =>{
+        localStorage.removeItem("user");
+        navigate('/');
+        window.location.reload();
+    }
   return (
     <div className="flex flex-col md:flex-row gap-7 bg-gray-100">
       <div className="md:w-[30%] w-full bg-red-950 px-4 md:rounded-tr-3xl md:rounded-br-3xl">
-        <div className="flex justify-center mt-5">
+        <Link to={"/"} className="flex justify-center mt-5">
             <img className="bg-white p-2 rounded-xl" src={logo} alt="Logo" />
-        </div>
+        </Link>
         <div className="mt-7">
           <ul className="md:space-y-2 space-y-1 text-[15px] font-medium">
             {lenderLinks.map((link) => (
@@ -37,7 +43,7 @@ const LenderRoot = () => {
           </ul>
         </div>
         <div className='mt-10 pb-7'>
-                        <button className='flex items-center gap-3 font-medium text-red-600 cursor-pointer text-[16px]'><PiSignOutFill size={19}/>Sign Out</button>
+                        <button onClick={handleSignOut} className='flex items-center gap-3 font-medium text-red-600 cursor-pointer text-[16px]'><PiSignOutFill size={19}/>Sign Out</button>
                     </div>
       </div>
       <div className="w-full md:py-10 py-4 px-4 min-h-screen">

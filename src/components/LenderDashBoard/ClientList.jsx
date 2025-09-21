@@ -6,7 +6,7 @@ import ApprovedClients from "./ApprovedClients";
 import RejectedClients from "./RejectedClients";
 
 const ClientList = ({clientList}) => {
-  // console.log(clientList.allClients);
+  // console.log(clientList);
   const [filter, setFilter] = useState(false);
   return (
     <div className="bg-white p-4 rounded-sm">
@@ -25,17 +25,17 @@ const ClientList = ({clientList}) => {
 
   <input type="radio" name="my_tabs_2" className="tab" aria-label="Pending" />
   <div className="tab-content border-base-300 bg-base-100 p-10">
-    <PendingClients></PendingClients>
+    <PendingClients pendingClients={clientList?.pendingClients}></PendingClients>
   </div>
 
   <input type="radio" name="my_tabs_2" className="tab" aria-label="Approved" />
   <div className="tab-content border-base-300 bg-base-100 p-10">
-    <ApprovedClients></ApprovedClients>
+    <ApprovedClients approvedClients={clientList?.successClients}></ApprovedClients>
   </div>
 
   <input type="radio" name="my_tabs_2" className="tab" aria-label="Rejected" />
   <div className="tab-content border-base-300 bg-base-100 p-10">
-    <RejectedClients></RejectedClients>
+    <RejectedClients rejectedClients={clientList?.rejectedClients}></RejectedClients>
   </div>
 </div>
       

@@ -1,7 +1,12 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
 import industrySolutions from "../../data/IndustrySolution.js";
+import useProfileInfo from "../../hooks/useProfileInfo.jsx";
+import { useAuthContext } from "../../providers/AuthProviders.jsx";
+import { Link } from "react-router-dom";
 
 const IndustrySolution = () => {
+  const {profileInfo} = useProfileInfo();
+  const {user} = useAuthContext();
   return (
     <div className="py-7 pd:my-12 lg:py-16 px-5 md:px-14 lg:px-24 bg-gray-100">
       <div className="text-center space-y-1 md:space-y-2 lg:space-y-3">
@@ -34,9 +39,9 @@ const IndustrySolution = () => {
             Don't see your industry? We offer customized lending solutions
             tailored to your specific business needs.
           </p>
-          <button className="text-sm bg-gray-300 px-3 flex justify-between items-center gap-2 py-1 rounded-sm cursor-pointer text-gray-700">
-            Get Started as Client <FaLongArrowAltRight size={16} />
-          </button>
+          <Link to={user?.role === "admin" ? "/lender" : profileInfo?.data ? "/dashboard" : user ? "/complete-profile" : "/sign-in"} >
+            <button className="text-sm text-gray-700 bg-gray-300 px-3 flex items-center gap-2 py-1 rounded-sm cursor-pointer">Get Started as Client <FaLongArrowAltRight size={16} /></button>
+          </Link>
         </div>
       </div>
     </div>

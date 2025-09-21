@@ -8,9 +8,9 @@ import { FiUser } from "react-icons/fi";
 const CreditPassport = ({creditInfo, email}) => {
     // console.log(creditInfo);
     return (
-        <div className="border-b border-gray-300 pb-7">
+        <div className="border-b border-gray-300 pb-3">
             <h2 className="text-red-900 text-lg font-semibold">Credit Passport</h2>
-            <div className="mt-4 flex md:gap-20 gap-3 flex-col md:flex-row">
+            <div className="mt-2 flex md:gap-20 gap-3 flex-col md:flex-row">
                 <div className="flex gap-2 flex-col md:flex-row">
                     <img className="w-10 h-10 rounded-full border border-blue-500" src={logo} alt="Logo" />
                     <div>

@@ -1,8 +1,13 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
 import banner from "../../assets/banner.png";
 import Stat from "./Stat";
+import {Link} from "react-router-dom";
+import { useAuthContext } from "../../providers/AuthProviders";
+import useProfileInfo from "../../hooks/useProfileInfo";
 
 const Banner = () => {
+  const {profileInfo} = useProfileInfo();
+  const {user} = useAuthContext();
   return (
     <div className="relative mb-30 md:mb-96 lg:mb-36">
       <div className="bg-red-900 flex justify-between flex-col md:flex-row items-center py-8 md:py-11 lg:py-17 px-5 md:px-16 lg:px-20 gap-10">
@@ -18,9 +23,9 @@ const Banner = () => {
             with trusted lenders for faster, more transparent lending decisions
             across multiple industries.
           </p>
-          <button className="text-sm bg-gray-300 px-3 flex justify-between items-center gap-2 py-1 rounded-sm cursor-pointer">
-            Get Started as Client <FaLongArrowAltRight size={16} />
-          </button>
+          <Link to={user?.role === "admin" ? "/lender" : profileInfo?.data ? "/dashboard" : user ? "/complete-profile" : "/sign-in"} >
+            <button className="text-sm bg-gray-300 px-3 flex items-center gap-2 py-1 rounded-sm cursor-pointer">Get Started as Client <FaLongArrowAltRight size={16} /></button>
+          </Link>
         </div>
         <div>
           <img

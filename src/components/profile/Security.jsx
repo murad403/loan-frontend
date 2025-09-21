@@ -39,7 +39,7 @@ const Security = () => {
         // console.log(newUpdatedPassword);
     }
   return (
-    <div>
+    <div className="px-3 py-5 shadow-md bg-white rounded-sm">
       <div className="flex justify-between items-center py-2 bg-gray-200 px-5 rounded-sm">
         <p className="font-semibold text-md">Security</p>
       </div>

@@ -8,6 +8,7 @@ import { useAuthContext } from "../providers/AuthProviders";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const {user} = useAuthContext();
+  // console.log(user.role);
   return (
     <div>
       <div className="flex justify-between items-center py-2 px-4 md:px-16 lg:px-20">
@@ -28,7 +29,7 @@ const Navbar = () => {
           {
           user 
           ? 
-          <Link to={`/profile`}>
+          <Link to={user?.role === "admin" ? "/lender" : "/profile"}>
             <img src={logo} alt="profile img"  className="w-10 h-10 rounded-full border border-blue-700"/>
           </Link>
           : 
@@ -58,7 +59,7 @@ const Navbar = () => {
             {
           user 
           ? 
-          <Link onClick={() => setMenu(false)} to={`/profile`}>
+          <Link onClick={() => setMenu(false)} to={user?.role === "admin" ? "/lender" : "/profile"}>
             <img src={logo} alt="profile img"  className="w-10 h-10 rounded-full border border-blue-700"/>
           </Link>
           : 
