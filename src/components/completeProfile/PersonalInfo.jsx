@@ -21,17 +21,17 @@ const PersonalInfo = ({step, setStep, setPersonalInfo}) =>{
                 <div className='flex flex-col md:flex-row gap-3'>
                     <div className='w-full md:w-1/2'>
                         <label className='text-sm font-medium text-gray-700 block'>First Name</label>
-                        <input  name='first-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder="Enter your first name" />
+                        <input required  name='first-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder="Enter your first name" />
                     </div>
                     <div className='w-full md:w-1/2'>
                         <label className='text-sm font-medium text-gray-700 block'>Last Name</label>
-                        <input name='last-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder="Enter your last name" />
+                        <input required name='last-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder="Enter your last name" />
                     </div>
                 </div>
                 <div className='flex flex-col md:flex-row gap-3'>
                     <div className='w-full md:w-1/2'>
                         <label className='text-sm font-medium text-gray-700 block'>Date Of Birth</label>
-                        <input name='date-of-birth' type="date" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]'/>
+                        <input name='date-of-birth' required type="date" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]'/>
                     </div>
                     <div className='w-full md:w-1/2'>
                         <label className='text-sm font-medium text-gray-700 block'>Gender</label>

@@ -12,7 +12,7 @@ const CreditPassport = ({creditInfo, email}) => {
             <h2 className="text-red-900 text-lg font-semibold">Credit Passport</h2>
             <div className="mt-4 flex md:gap-20 gap-3 flex-col md:flex-row">
                 <div className="flex gap-2 flex-col md:flex-row">
-                    <img className="w-8 h-8 rounded-full" src={logo} alt="Logo" />
+                    <img className="w-10 h-10 rounded-full border border-blue-500" src={logo} alt="Logo" />
                     <div>
                         <h3 className="text-[17px] font-semibold capitalize">{creditInfo?.clientName}</h3>
                         <div className="text-sm flex items-center gap-1">

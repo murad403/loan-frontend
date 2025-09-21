@@ -27,8 +27,8 @@ const CreditLimit = ({fafcBalance, creditInfo}) => {
             lacation
             },
             financialInfo: {
-                loanAmount: parseInt(loanAmount), annualIncome: financialInfo?.annualIncome, existingLoan: financialInfo?.existingLoan,
-                valueOfLandOwnership: financialInfo?.valueOfLandOwnership, mobileMoneyBalance: financialInfo?.mobileMoneyBalance, creditScore: creditInfo?.creditScore
+                loanAmount: parseInt(loanAmount), annualIncome: financialInfo?.annualIncome, existingLoan: financialInfo?.existingLoan ? financialInfo?.existingLoan : "no",
+                valueOfLandOwnership: financialInfo?.valueOfLandOwnership, mobileMoneyBalance: financialInfo?.mobileMoneyBalance, creditScore: creditInfo?.creditScore, creditTag: creditInfo?.creditTag, electricityBill: financialInfo?.electricityBill, existingLoanAmount: financialInfo?.existingLoanAmount
             }
             
 

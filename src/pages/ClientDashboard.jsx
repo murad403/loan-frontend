@@ -16,13 +16,14 @@ const ClientDashboard = () => {
         let totalBalance = financialInfo?.valueOfLandOwnership + financialInfo?.mobileMoneyBalance + financialInfo?.existingLoanAmount + financialInfo?.electricityBill + financialInfo?.annualIncome;
         fafcBalance = totalBalance / 5;
     }
-    if(financialInfo?.existingLoan === "no"){
+    if(financialInfo?.existingLoan === "no" || financialInfo?.existingLoan === null){
         let totalBalance = financialInfo?.valueOfLandOwnership + financialInfo?.mobileMoneyBalance + financialInfo?.electricityBill + financialInfo?.annualIncome;
         fafcBalance = totalBalance / 4;
     }
 
     
     const creditInfo = getCreditScore(fafcBalance);
+    // console.log(financialInfo, fafcBalance,creditInfo);
     
     const annualIncome = getScore(financialInfo?.annualIncome, 30);
     const electricityBill = getScore(financialInfo?.electricityBill, 30);

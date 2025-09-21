@@ -2,6 +2,8 @@ import useCreditRequestInfo from "../../../hooks/useCreditRequestInfo";
 import CreditPassport from "./CreditPassport";
 import Decision from "./Decision";
 import FinancialInformation from "./FinancialInformation";
+import LenderCreditScore from "./LenderCreditScore";
+import RiskAssessment from "./RiskAssessment";
 
 const ClientsDetailsModal = ({ actionId, setActionId }) => {
   const { creditRequestInfo } = useCreditRequestInfo();
@@ -20,14 +22,15 @@ const ClientsDetailsModal = ({ actionId, setActionId }) => {
           </button>
         </form>
       </div>
-      <div className="md:p-5 p-3 flex gap-5 items-center flex-col md:flex-row">
+      <div className="md:p-5 p-3 flex gap-16 md:gap-5 items-start flex-col md:flex-row">
             <div className="md:w-[70%] w-full">
               <CreditPassport creditInfo={client?.creditInfo} email={client?.email}></CreditPassport>
               <FinancialInformation financialInfo={client?.financialInfo}></FinancialInformation>
               <Decision></Decision>
             </div>
-            <div className="md:w-[30%] bg-gray-100">
-    df
+            <div className="md:w-[30%] space-y-3 w-full">
+              <LenderCreditScore financialInfo={client?.financialInfo}></LenderCreditScore>
+              <RiskAssessment financialInfo={client?.financialInfo}></RiskAssessment>
             </div>
       </div>
     </div>

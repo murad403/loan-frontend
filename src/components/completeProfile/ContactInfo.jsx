@@ -20,20 +20,20 @@ const ContactInfo = ({step, setStep, setContactInfo}) =>{
             <form onSubmit={handleContactInfo} className='mt-5 md:space-y-3 space-y-1'>
                 <div className='w-full'>
                         <label className='text-sm font-medium text-gray-700 block'>Address</label>
-                        <input name='address' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"12 street road"} />
+                        <input name='address' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"12 street road"} required/>
                 </div>
                 <div className="grid md:grid-cols-3 gap-3 grid-cols-1">
                     <div>
                         <label className='text-sm font-medium text-gray-700 block'>City</label>
-                        <input name='city' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"New York"} />
+                        <input name='city' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"New York"} required/>
                     </div>
                     <div>
                         <label className='text-sm font-medium text-gray-700 block'>State</label>
-                        <input name='state' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"NY"} />
+                        <input name='state' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"NY"} required/>
                     </div>
                     <div>
                         <label className='text-sm font-medium text-gray-700 block'>ZIP Code</label>
-                        <input name='zip-code' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"5010"} />
+                        <input name='zip-code' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"5010"} required/>
                     </div>
                 </div>
                 <div className="flex justify-between">
