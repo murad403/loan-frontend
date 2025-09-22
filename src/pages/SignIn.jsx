@@ -26,12 +26,12 @@ const SignIn = () => {
     if(!terms){
       return toast.error("Please accept the terms and conditions");
     }
-    const loginUser = {
+    const clientInfo = {
       email,
       password,
       terms,
     };
-    axiosPublic.post("/api/v1/user/sign-in", { loginUser })
+    axiosPublic.post("/api/v1/user/sign-in", { clientInfo })
       .then(response =>{
         // console.log(response);
         localStorage.setItem("user", JSON.stringify(response?.data?.data));

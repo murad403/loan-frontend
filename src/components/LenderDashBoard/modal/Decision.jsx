@@ -18,7 +18,7 @@ const Decision = ({email}) => {
     const clientInfo = {
         loanAmount, interestRate, terms: terms ? terms : "3", notes, status, email
     }
-    console.log(status);
+    // console.log(status);
     axiosPublic.post('/api/v1/creditDecision', {clientInfo})
         .then(response =>{
             toast.success(response?.data?.message);

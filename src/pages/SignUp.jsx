@@ -27,11 +27,11 @@ const SignUp = () => {
         if(!terms){
             return toast.error("You must accept the terms and conditions");
         }
-        const newUser = {
+        const clientInfo = {
             email, phone, password, terms
         }
-        // console.log(newUser);
-        axiosPublic.post("/api/v1/user/sign-up", newUser)
+        // console.log(clientInfo);
+        axiosPublic.post("/api/v1/user/sign-up", {clientInfo})
             .then(response =>{
                 // console.log(response);
                 toast.success(response.data.message);

@@ -17,20 +17,20 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
   const handleApplicationSubmit = (e) =>{
     e.preventDefault();
     const form = new FormData(e.target);
-    const annualIncome = form.get('annual-income');
-    const valueOfLandOwnership = form.get('value-of-land');
-    const electricityBill = form.get('electricity-bill');
-    const mobileMoneyBalance = form.get('mobile-money-balance');
-    const existingLoanAmount = form.get('existing-loan');
+    const annualIncome = Number(form.get('annual-income'));
+    const valueOfLandOwnership = Number(form.get('value-of-land'));
+    const electricityBill = Number(form.get('electricity-bill'));
+    const mobileMoneyBalance = Number(form.get('mobile-money-balance'));
+    const existingLoanAmount = Number(form.get('existing-loan'));
     const terms = form.get('terms');
     const financialInfo = {
       annualIncome, valueOfLandOwnership, electricityBill, mobileMoneyBalance, existingLoanAmount, terms, existingLoan
     }
-    const profileInfo = {
+    const clientInfo = {
       personalInfo, contactInfo, financialInfo
     }
-    // console.log(profileInfo);
-    axiosPublic.patch(`/api/v1/profile/${userId}`, profileInfo)
+    // console.log(clientInfo);
+    axiosPublic.patch(`/api/v1/profile/${userId}`, {clientInfo})
       .then(response =>{
         toast.success(response?.data?.message);
         navigate('/dashboard')
