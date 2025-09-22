@@ -2,31 +2,48 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { CiLock } from "react-icons/ci";
 import { MdOutlineMail } from "react-icons/md";
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const ResetPassword = () => {
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [otp] = useState(new Array(6).fill(""));
   const [sendOTP, setSendOTP] = useState(false);
   const [otpNumber, setOtpNumber] = useState([]);
   const [showResetPasswordSection, setShowResetPasswordSection] = useState(false);
+
 // send otp number to email------------------
   const handleSendOTP = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    setSendOTP(true);
-    console.log(email);
+    axiosPublic.post("/api/v1/user/forgot-password", {email})
+      .then(response =>{
+        toast.success(response?.data?.message);
+        setSendOTP(true);
+        setEmail(email);
+      })
+      .catch(error =>{
+        toast.error(error?.response?.data?.message);
+      })
   };
 
 //   confirm otp number--------------------
 const handleConfirmOTP = (e) => {
     e.preventDefault();
-    const otpNumbersString = otpNumber.join("");
-    // console.log(otpNumbersString);
-    const otpNumbersNumber = Number(otpNumbersString);
-    setShowResetPasswordSection(true);
-    console.log(otpNumbersNumber);
-    console.log(otpNumber.length);
+    const otp = otpNumber.join("");
+    axiosPublic.post("/api/v1/user/verify-otp", {email, otp})
+      .then(response =>{
+        toast.success(response?.data?.message);
+        setShowResetPasswordSection(true);
+      })
+      .catch(error =>{
+        toast.error(error?.response?.data?.message);
+      })
   }
 
 //   reset password----------------------
@@ -35,10 +52,18 @@ const handleResetPassword = (e) => {
     const form = new FormData(e.target);
     const password = form.get('password');
     const confirmPassword = form.get('confirmPassword');
-    const resetPassword = {
-        password, confirmPassword
+    if(password !== confirmPassword){
+      return toast.error("Enter the same password");
     }
-    console.log(resetPassword);
+    // console.log(email, password);
+    axiosPublic.post("/api/v1/user/reset-password", {email, password})
+      .then(response =>{
+        toast.success(response?.data?.message);
+        navigate("/sign-in");
+      })
+      .catch(error =>{
+        toast.error(error?.response?.data?.message);
+      })
 }
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center px-5">
@@ -58,7 +83,7 @@ const handleResetPassword = (e) => {
               <input
                 type="email"
                 name="email"
-                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium"
+                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium"
                 placeholder="Enter your email"
                 required
               />
@@ -116,7 +141,7 @@ const handleResetPassword = (e) => {
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Password</label>
                         <div className="relative">
-                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Create a password" />
+                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Create a password" />
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                         <p onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
@@ -128,7 +153,7 @@ const handleResetPassword = (e) => {
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Confirm Password</label>
                         <div className="relative">
-                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Confirm password" />
+                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Confirm password" />
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                         <p onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
