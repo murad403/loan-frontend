@@ -1,4 +1,5 @@
-import Banner from '../components/home/banner';
+
+import Banner from '../components/home/Banner';
 import CreditLimit from '../components/home/CreditLimit';
 import HowItWorks from '../components/home/HowItWorks';
 import IndustrySolution from '../components/home/IndustrySolution';
