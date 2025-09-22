@@ -14,6 +14,7 @@ import ClientDashboard from "../pages/ClientDashboard";
 import LenderRoot from "../Layout/LenderRoot";
 import LenderDashBoard from "../pages/LenderDashBoard";
 import Settings from "../pages/Settings";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
                 element: <About></About>
             },
             {
-                path: "dashboard",
+                path: "/dashboard",
                 element: <ClientDashboard></ClientDashboard>
             },
             {
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/lender",
-        element: <LenderRoot></LenderRoot>,
+        element: <PrivateRoute><LenderRoot></LenderRoot></PrivateRoute>,
         children: [
             {
                 path: "/lender",
