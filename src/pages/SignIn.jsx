@@ -57,7 +57,7 @@ const SignIn = () => {
               <input
                 type="email"
                 name="email"
-                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium"
+                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium"
                 placeholder="Enter your email"
               />
               <MdOutlineMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -71,7 +71,7 @@ const SignIn = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium"
+                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium"
                 placeholder="Enter your password"
               />
               <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />

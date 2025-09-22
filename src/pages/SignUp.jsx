@@ -50,21 +50,21 @@ const SignUp = () => {
                     <div>
                         <label className='text-sm font-semibold text-red-900'>Email</label>
                         <div className="relative">
-                            <input type="email" name='email' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Enter your email" required/>
+                            <input type="email" name='email' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Enter your email" required/>
                             <MdOutlineMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                     </div>
                     <div>
                         <label className='text-sm font-semibold text-red-900'>Phone Number</label>
                         <div className="relative">
-                            <input type="number" name='phone' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Enter your phone number" required/>
+                            <input type="number" name='phone' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Enter your phone number" required/>
                             <MdOutlinePhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                     </div>
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Password</label>
                         <div className="relative">
-                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Create a password" required/>
+                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Create a password" required/>
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                         <p onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
@@ -76,7 +76,7 @@ const SignUp = () => {
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Confirm Password</label>
                         <div className="relative">
-                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-1 px-4 pl-8 text-sm font-medium' placeholder="Confirm password" required/>
+                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Confirm password" required/>
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                         <p onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
