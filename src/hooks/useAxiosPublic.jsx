@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://loan-backend-l3l3.onrender.com",
     withCredentials: true
 })
 const useAxiosPublic = () => {
