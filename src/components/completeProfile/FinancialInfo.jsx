@@ -54,7 +54,6 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
               name="annual-income"
               type="number"
               className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
-              placeholder="Enter your first name"
               required
             />
           </div>
@@ -66,7 +65,6 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
               name="value-of-land"
               type="number"
               className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
-              placeholder="Enter your last name"
               required
             />
           </div>
