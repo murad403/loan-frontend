@@ -22,7 +22,7 @@ const LoanStatus = () => {
                     <h3 className="text-red-950 font-semibold">Terms (months)</h3>
                     <p className="mt-2">{12} Month</p>
                 </div>
-                <p className="text-red-950 font-semibold text-[16px]">**Note: {"aflkajdflsdjflsdkfjasldkfjalfjdlfkjadfklajdsflkjdflkdjfladkjfl"}</p>
+                <p className="text-red-950 font-semibold text-[16px]">**Note: {data?.notes}</p>
                 </div> :
                 data?.status === "reject" ?
                 <div className="flex flex-col items-center">
