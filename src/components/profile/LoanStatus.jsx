@@ -12,17 +12,17 @@ const LoanStatus = () => {
                 <div className="px-3 py-5 shadow-md bg-white rounded-sm space-y-4">
                 <div>
                     <h3 className="text-red-950 font-semibold">Loan Amount</h3>
-                    <p className="mt-2">${1000}</p>
+                    <p className="mt-2 text-gray-800">${data?.loanAmount}</p>
                 </div>
                 <div>
                     <h3 className="text-red-950 font-semibold">Interest Rate</h3>
-                    <p className="mt-2">{1000}%</p>
+                    <p className="mt-2 text-gray-800">{data?.interestRate}%</p>
                 </div>
                 <div>
                     <h3 className="text-red-950 font-semibold">Terms (months)</h3>
-                    <p className="mt-2">{12} Month</p>
+                    <p className="mt-2 text-gray-800">{data?.terms} Month</p>
                 </div>
-                <p className="text-red-950 font-semibold text-[16px]">**Note: {data?.notes}</p>
+                <p className="text-red-950 font-semibold text-[16px]">***Note: <span className="text-gray-700">{data?.notes}</span></p>
                 </div> :
                 data?.status === "reject" ?
                 <div className="flex flex-col items-center">

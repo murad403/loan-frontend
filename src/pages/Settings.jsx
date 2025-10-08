@@ -48,7 +48,7 @@ const Settings = () => {
     }
     return (
         <div className="px-3 py-5 shadow-md bg-white rounded-sm">
-                    <div className='flex flex-col md:flex-row justify-between items-center py-4 bg-gray-200 px-5 rounded-sm md:py-2'>
+                    <div className='flex flex-col md:flex-row justify-between items-center py-4 bg-gray-200 px-5 rounded-sm md:py-2 text-gray-800'>
                         <p className='font-semibold text-md'>Personal Information</p>
                         <div className='flex items-center gap-4 md:gap-7 flex-col md:flex-row mt-3 md:mt-0'>
                             <button onClick={() => setUpdateProfile(true)} className={`${updateProfile ? "hidden" : "block"} text-sm font-semibold cursor-pointer flex items-center gap-1`}><MdOutlineEditNote size={25}/>Update Profile</button>
@@ -65,40 +65,40 @@ const Settings = () => {
                     <form onSubmit={handleUpdateProfile} className='mt-6 md:space-y-3 space-y-1'>
                         <div className='flex flex-col md:flex-row gap-3'>
                             <div className='w-full md:w-1/2'>
-                                <label className='text-sm font-medium text-gray-700 block'>First Name</label>
-                                <input disabled={!updateProfile}  name='first-name' defaultValue={profileInfo?.data?.personalInfo?.firstName ? profileInfo?.data?.personalInfo?.firstName : ""} type="text" className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]' />
+                                <label className='text-sm font-medium text-gray-800 block'>First Name</label>
+                                <input disabled={!updateProfile}  name='first-name' defaultValue={profileInfo?.data?.personalInfo?.firstName ? profileInfo?.data?.personalInfo?.firstName : ""} type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700' />
                             </div>
                             <div className='w-full md:w-1/2'>
-                                <label className='text-sm font-medium text-gray-700 block'>Last Name</label>
-                                <input disabled={!updateProfile} name='last-name' type="text" defaultValue={profileInfo?.data?.personalInfo?.firstName ? profileInfo?.data?.personalInfo?.lastName : ""} className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]' />
+                                <label className='text-sm font-medium text-gray-800 block'>Last Name</label>
+                                <input disabled={!updateProfile} name='last-name' type="text" defaultValue={profileInfo?.data?.personalInfo?.firstName ? profileInfo?.data?.personalInfo?.lastName : ""} className='appearance-none px-4 py-2 outline-none text-gray-700 border border-gray-400 w-full rounded-sm text-[15px]' />
                             </div>
                         </div>
                         <div className='flex flex-col md:flex-row gap-3'>
                             <div className='w-full md:w-1/2'>
-                                <label className='text-sm font-medium text-gray-700 block'>Email Address</label>
-                                <input name='email' disabled defaultValue={user?.email} type="email" className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]'/>
+                                <label className='text-sm font-medium text-gray-800 block'>Email Address</label>
+                                <input name='email' disabled defaultValue={user?.email} type="email" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700'/>
                             </div>
                             <div className='w-full md:w-1/2'>
-                                <label className='text-sm font-medium text-gray-700 block'>Phone Number</label>
-                                <input disabled={!updateProfile} name='phone' type="number" defaultValue={user?.phone ? user?.phone : ""} className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]'/>
+                                <label className='text-sm font-medium text-gray-800 block'>Phone Number</label>
+                                <input disabled={!updateProfile} name='phone' type="number" defaultValue={user?.phone ? user?.phone : ""} className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700'/>
                             </div>
                         </div>
                         <div className='w-full'>
-                                <label className='text-sm font-medium text-gray-700 block'>Street Address</label>
-                                <input disabled={!updateProfile} name='street' type="text" defaultValue={profileInfo?.data?.contactInfo?.address ? profileInfo?.data?.contactInfo?.address : ""} className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"12 street road"} />
+                                <label className='text-sm font-medium text-gray-800 block'>Street Address</label>
+                                <input disabled={!updateProfile} name='street' type="text" defaultValue={profileInfo?.data?.contactInfo?.address ? profileInfo?.data?.contactInfo?.address : ""} className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700' placeholder={"12 street road"} />
                         </div>
                         <div className="grid md:grid-cols-3 gap-3 grid-cols-1">
                             <div>
-                                <label className='text-sm font-medium text-gray-700 block'>City</label>
-                                <input disabled={!updateProfile} name='city' type="text" defaultValue={profileInfo?.data?.contactInfo?.city ? profileInfo?.data?.contactInfo?.city : ""} className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"New York"} />
+                                <label className='text-sm font-medium text-gray-800 block'>City</label>
+                                <input disabled={!updateProfile} name='city' type="text" defaultValue={profileInfo?.data?.contactInfo?.city ? profileInfo?.data?.contactInfo?.city : ""} className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700' placeholder={"New York"} />
                             </div>
                             <div>
-                                <label className='text-sm font-medium text-gray-700 block'>State</label>
-                                <input disabled={!updateProfile} name='state' defaultValue={profileInfo?.data?.contactInfo?.state ? profileInfo?.data?.contactInfo?.state : ""} type="text" className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"NY"} />
+                                <label className='text-sm font-medium text-gray-800 block'>State</label>
+                                <input disabled={!updateProfile} name='state' defaultValue={profileInfo?.data?.contactInfo?.state ? profileInfo?.data?.contactInfo?.state : ""} type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700' placeholder={"NY"} />
                             </div>
                             <div>
-                                <label className='text-sm font-medium text-gray-700 block'>ZIP Code</label>
-                                <input disabled={!updateProfile} defaultValue={profileInfo?.data?.contactInfo?.zipCode ? profileInfo?.data?.contactInfo?.zipCode : ""} name='zip' type="text" className='appearance-none px-4 py-1 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"5010"} />
+                                <label className='text-sm font-medium text-gray-800 block'>ZIP Code</label>
+                                <input disabled={!updateProfile} defaultValue={profileInfo?.data?.contactInfo?.zipCode ? profileInfo?.data?.contactInfo?.zipCode : ""} name='zip' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700' placeholder={"5010"} />
                             </div>
                         </div>
                         <div className={`${updateProfile ? "block" : "hidden"}`}>

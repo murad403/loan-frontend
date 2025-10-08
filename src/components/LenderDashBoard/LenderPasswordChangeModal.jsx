@@ -38,9 +38,9 @@ const LenderPasswordChangeModal = () => {
         // console.log(newUpdatedPassword);
     }
   return (
-        <div className="modal-box w-11/12 max-w-1xl">
+        <div className="modal-box w-11/12 max-w-1xl bg-white">
       <form method="dialog">
-        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+        <button className="btn btn-sm btn-circle btn-ghost bg-gray-200 text-gray-700 absolute right-2 top-2">
           ✕
         </button>
       </form>
@@ -50,12 +50,12 @@ const LenderPasswordChangeModal = () => {
                 <input
                     type={showPassword ? "text" : "password"}
                     name="current-password"
-                    className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
+                    className="w-full appearance-none text-gray-700 outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
                     placeholder="....................."
                   />
                 <p
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-2 top-[37px] cursor-pointer"
+                  className="absolute right-2 top-[37px] cursor-pointer text-gray-700"
                 >
                   {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                 </p>
@@ -65,27 +65,27 @@ const LenderPasswordChangeModal = () => {
                 <input
                     type={showNewPassword ? "text" : "password"}
                     name="new-password"
-                    className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
+                    className="w-full text-gray-700 appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
                     placeholder="....................."
                   />
                 <p
                   onClick={() => setShowNewPassword(!showNewPassword)}
-                  className="absolute right-2 top-[37px] cursor-pointer"
+                  className="absolute right-2 top-[37px] cursor-pointer text-gray-700"
                 >
                   {showNewPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                 </p>
               </div>
               <div className="relative">
-                <label className="text-sm font-semibold text-red-900">Confirm New Password</label>
+                <label className="text-sm font-semibold text-red-950">Confirm New Password</label>
                 <input
                     type={showConfirmNewPassword ? "text" : "password"}
                     name="confirm-new-password"
-                    className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
+                    className="w-full text-gray-700 appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
                     placeholder="....................."
                   />
                 <p
                   onClick={() => setShowConfirmNewPassword(!showConfirmNewPassword)}
-                  className="absolute right-2 top-[37px] cursor-pointer"
+                  className="absolute right-2 top-[37px] cursor-pointer text-gray-700"
                 >
                   {showConfirmNewPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                 </p>

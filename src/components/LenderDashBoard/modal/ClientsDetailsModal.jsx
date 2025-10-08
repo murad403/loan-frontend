@@ -22,7 +22,7 @@ const ClientsDetailsModal = ({ actionId, setActionId }) => {
           </button>
         </form>
       </div>
-      <div className="md:p-4 p-3 flex gap-16 md:gap-5 items-start flex-col md:flex-row">
+      <div className="md:p-4 p-3 flex gap-16 md:gap-5 items-start flex-col md:flex-row bg-white">
             <div className="md:w-[70%] w-full">
               <CreditPassport creditInfo={client?.creditInfo} email={client?.email}></CreditPassport>
               <FinancialInformation financialInfo={client?.financialInfo}></FinancialInformation>

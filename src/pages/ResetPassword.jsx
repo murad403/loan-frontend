@@ -83,16 +83,16 @@ const handleResetPassword = (e) => {
               <input
                 type="email"
                 name="email"
-                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium"
+                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium text-gray-700"
                 placeholder="Enter your email"
                 required
               />
-              <MdOutlineMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <MdOutlineMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-700" />
             </div>
           </div>
           <button
             type="submit"
-            className="w-full bg-red-950 text-white text-sm  py-2 rounded-sm cursor-pointer"
+            className="w-full bg-red-950 text-gray-200 text-sm  py-2 rounded-sm cursor-pointer"
           >
             Send OTP
           </button>
@@ -119,7 +119,7 @@ const handleResetPassword = (e) => {
                     name="otp"
                     type="text"
                     onChange={(e) => setOtpNumber([...otpNumber, e.target.value])}
-                    className="w-12 h-12 text-center border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-lg font-semibold"
+                    className="w-12 h-12 text-center border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-lg font-semibold text-gray-800"
                     required
                   />
                 ))}
@@ -127,7 +127,7 @@ const handleResetPassword = (e) => {
             </div>
             <button
               type="submit"
-              className="w-full bg-red-950 text-white text-sm  py-2 rounded-sm cursor-pointer"
+              className="w-full bg-red-950 text-gray-200 text-sm  py-2 rounded-sm cursor-pointer"
             >
               Continue
             </button>
@@ -141,10 +141,10 @@ const handleResetPassword = (e) => {
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Password</label>
                         <div className="relative">
-                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Create a password" />
+                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium text-gray-700' placeholder="Create a password" />
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
-                        <p onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
+                        <p onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-[32px] cursor-pointer text-gray-700" >
                                 {
                                     showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />
                                 }
@@ -153,16 +153,16 @@ const handleResetPassword = (e) => {
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Confirm Password</label>
                         <div className="relative">
-                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Confirm password" />
+                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium text-gray-700' placeholder="Confirm password" />
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
-                        <p onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
+                        <p onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="absolute right-2 top-[32px] cursor-pointer text-gray-700" >
                                 {
                                     showConfirmPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />
                                 }
                             </p>
                     </div>
-                    <button type="submit" className="w-full bg-red-950 text-white text-sm  py-2 rounded-sm cursor-pointer">Confirm</button>
+                    <button type="submit" className="w-full bg-red-950 text-gray-200 text-sm  py-2 rounded-sm cursor-pointer">Confirm</button>
                 </form>
             </div>
     }

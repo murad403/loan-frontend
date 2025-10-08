@@ -10,7 +10,7 @@ const ClientStatus = ({creditRequestStatus}) => {
                     <LuUsers size={23}/>
                 </div>
                 <div>
-                    <h3 className='text-lg font-extralight'>Total Clients</h3>
+                    <h3 className='text-lg font-extralight text-gray-900'>Total Clients</h3>
                     <p className='text-red-950 text-xl'>{creditRequestStatus?.totalClients}</p>
                 </div>
             </div>
@@ -19,7 +19,7 @@ const ClientStatus = ({creditRequestStatus}) => {
                     <IoCheckmarkDoneCircleOutline size={23}/>
                 </div>
                 <div>
-                    <h3 className='text-lg font-extralight'>Approved Clients</h3>
+                    <h3 className='text-lg font-extralight text-gray-900'>Approved Clients</h3>
                     <p className='text-green-700 text-xl'>{creditRequestStatus?.approvedClients}</p>
                 </div>
             </div>
@@ -28,7 +28,7 @@ const ClientStatus = ({creditRequestStatus}) => {
                     <MdAccessTime size={23}/>
                 </div>
                 <div>
-                    <h3 className='text-lg font-extralight'>Pending Decisions</h3>
+                    <h3 className='text-lg font-extralight text-gray-900'>Pending Decisions</h3>
                     <p className='text-yellow-950 text-xl'>{creditRequestStatus?.pendingClients}</p>
                 </div>
             </div>

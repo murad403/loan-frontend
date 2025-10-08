@@ -10,7 +10,7 @@ const AllClients = ({allClients}) => {
             <div className="overflow-x-auto">
         <table className="table">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-gray-200 text-gray-800">
               <th>ID</th>
               <th>City</th>
               <th>Credit Score</th>
