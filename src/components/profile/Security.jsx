@@ -41,7 +41,7 @@ const Security = () => {
   return (
     <div className="px-3 py-5 shadow-md bg-white rounded-sm">
       <div className="flex justify-between items-center py-2 bg-gray-200 px-5 rounded-sm">
-        <p className="font-semibold text-md">Security</p>
+        <p className="font-semibold text-md text-gray-800">Security</p>
       </div>
       <form onSubmit={handleChangePassword} className="mt-5 md:space-y-3 space-y-1 md:px-10">
         <div className="relative">
@@ -49,12 +49,12 @@ const Security = () => {
           <input
               type={showPassword ? "text" : "password"}
               name="current-password"
-              className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
+              className="w-full appearance-none outline-none border border-gray-300 rounded-sm py-2 px-4 text-sm font-medium text-gray-700"
               placeholder="....................."
             />
           <p
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-[37px] cursor-pointer"
+            className="absolute right-2 top-[37px] cursor-pointer text-gray-700"
           >
             {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
           </p>
@@ -64,12 +64,12 @@ const Security = () => {
           <input
               type={showNewPassword ? "text" : "password"}
               name="new-password"
-              className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
+              className="w-full appearance-none outline-none border border-gray-300 rounded-sm py-2 px-4 text-sm font-medium text-gray-700"
               placeholder="....................."
             />
           <p
             onClick={() => setShowNewPassword(!showNewPassword)}
-            className="absolute right-2 top-[37px] cursor-pointer"
+            className="absolute right-2 top-[37px] cursor-pointer text-gray-700"
           >
             {showNewPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
           </p>
@@ -79,12 +79,12 @@ const Security = () => {
           <input
               type={showConfirmNewPassword ? "text" : "password"}
               name="confirm-new-password"
-              className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 text-sm font-medium"
+              className="w-full appearance-none outline-none border border-gray-300 rounded-sm py-2 px-4 text-sm font-medium text-gray-700"
               placeholder="....................."
             />
           <p
             onClick={() => setShowConfirmNewPassword(!showConfirmNewPassword)}
-            className="absolute right-2 top-[37px] cursor-pointer"
+            className="absolute right-2 top-[37px] cursor-pointer text-gray-700"
           >
             {showConfirmNewPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
           </p>

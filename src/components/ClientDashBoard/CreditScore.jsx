@@ -4,8 +4,8 @@ const CreditScore = ({creditInfo, factorsAffectingScore}) => {
     // console.log(creditInfo, factorsAffectingScore);
     return (
         <div>
-            <div className='bg-gray-200 p-4 flex justify-between items-center rounded-t-sm'>
-                <h3 className='font-bold'>Credit Score</h3>
+            <div className='bg-gray-300 p-4 flex justify-between items-center rounded-t-sm'>
+                <h3 className='font-bold text-black'>Credit Score</h3>
                 <p className='text-sm text-gray-700'>Updated today</p>
             </div>
             <div className='px-4 py-10'>
@@ -17,9 +17,9 @@ const CreditScore = ({creditInfo, factorsAffectingScore}) => {
                          </div>
                     )}/>
                 </div>
-                <p className='text-center text-sm text-gray-700 border-b border-gray-300 md:pb-16 pb-10 '>Your credit score is in the Excellent range. This indicates excellent creditworthiness.</p>
+                <p className='text-center text-sm text-gray-800 border-b border-gray-300 md:pb-16 pb-10 '>Your credit score is in the Excellent range. This indicates excellent creditworthiness.</p>
                 <div className='mt-10 md:mt-16'>
-                    <h2 className='text-xl text-center text-red-950'>Factors affecting your score</h2>
+                    <h2 className='text-xl text-center text-red-950 font-semibold'>Factors affecting your score</h2>
                     <div className='mt-9 md:space-y-7 space-y-2'>
                         <div>
                             <div className='flex items-center justify-between'>

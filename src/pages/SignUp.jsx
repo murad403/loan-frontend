@@ -50,24 +50,24 @@ const SignUp = () => {
                     <div>
                         <label className='text-sm font-semibold text-red-900'>Email</label>
                         <div className="relative">
-                            <input type="email" name='email' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Enter your email" required/>
+                            <input type="email" name='email' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium text-gray-700' placeholder="Enter your email" required/>
                             <MdOutlineMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                     </div>
                     <div>
                         <label className='text-sm font-semibold text-red-900'>Phone Number</label>
                         <div className="relative">
-                            <input type="number" name='phone' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Enter your phone number" required/>
+                            <input type="number" name='phone' className='w-full appearance-none outline-none border border-gray-200 text-gray-700 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Enter your phone number" required/>
                             <MdOutlinePhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
                     </div>
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Password</label>
                         <div className="relative">
-                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Create a password" required/>
+                            <input type={showPassword ? "text" : "password"} name='password' className='w-full appearance-none outline-none text-gray-700 border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Create a password" required/>
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
-                        <p onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
+                        <p onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-[32px] cursor-pointer text-gray-800" >
                                 {
                                     showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />
                                 }
@@ -76,10 +76,10 @@ const SignUp = () => {
                     <div className="relative">
                         <label className='text-sm font-semibold text-red-900'>Confirm Password</label>
                         <div className="relative">
-                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium' placeholder="Confirm password" required/>
+                            <input type={showConfirmPassword ? "text" : "password"} name='confirmPassword' className='w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium text-gray-700' placeholder="Confirm password" required/>
                             <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         </div>
-                        <p onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="absolute right-2 top-[32px] cursor-pointer" >
+                        <p onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="absolute right-2 top-[32px] cursor-pointer text-gray-800" >
                                 {
                                     showConfirmPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />
                                 }
@@ -87,11 +87,11 @@ const SignUp = () => {
                     </div>
                     <div className="flex items-center">
                         <input type="checkbox" name='terms' className='mr-2 leading-tight' />
-                        <label className='text-sm font-medium text-gray-500'>I agree to the Privacy Policy  and Terms of service </label>
+                        <label className='text-sm font-medium text-gray-700'>I agree to the Privacy Policy  and Terms of service </label>
                     </div>
                     <button type="submit" className="w-full bg-red-950 text-white text-sm  py-2 rounded-sm cursor-pointer">Sign Up</button>
                     <div className="flex items-center gap-2 text-sm justify-center">
-                        <p>Already You Have Account?</p>
+                        <p className="text-gray-800">Already You Have Account?</p>
                         <Link className="text-red-950 font-semibold" to={"/sign-in"}>Sign In Here</Link>
                     </div>
                 </form>

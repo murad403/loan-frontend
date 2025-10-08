@@ -4,7 +4,7 @@ import reject from "../../assets/reject.png";
 
 const LoanStatus = () => {
     const {data} = useLoanStatus();
-    // console.log(data.status);
+    // console.log(data);
     return (
         <div>
             {
@@ -26,11 +26,11 @@ const LoanStatus = () => {
                 </div> :
                 data?.status === "reject" ?
                 <div className="flex flex-col items-center">
-                <h2 className='text-2xl md:text-3xl lg:text-4xl text-center'>We're sorry, your loan was not approved at this time</h2>
+                <h2 className='text-2xl md:text-3xl lg:text-4xl text-center text-red-950'>We're sorry, your loan was not approved at this time</h2>
                 <img className="h-[300px]" src={reject} alt="Reject" />
                 </div> :
                 <div className="flex flex-col items-center">
-                <h2 className='text-2xl md:text-3xl lg:text-4xl text-center'>Your loan has not yet been approved. Please wait for further updates</h2>
+                <h2 className='text-2xl md:text-3xl lg:text-4xl text-center text-red-950'>Your loan has not yet been approved. Please wait for further updates</h2>
                 <img className="h-[300px]" src={pending} alt="Pending" />
                 </div>
             }

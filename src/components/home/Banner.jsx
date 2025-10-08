@@ -24,7 +24,7 @@ const Banner = () => {
             across multiple industries.
           </p>
           <Link to={user?.role === "admin" ? "/lender" : profileInfo?.data ? "/dashboard" : user ? "/complete-profile" : "/sign-in"} >
-            <button className="text-sm bg-gray-300 px-3 flex items-center gap-2 py-1 rounded-sm cursor-pointer">Get Started as Client <FaLongArrowAltRight size={16} /></button>
+            <button className="text-sm bg-gray-300 px-3 flex items-center gap-2 py-1 text-gray-800 rounded-sm cursor-pointer">Get Started as Client <FaLongArrowAltRight size={16} /></button>
           </Link>
         </div>
         <div>

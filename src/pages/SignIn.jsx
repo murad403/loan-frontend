@@ -57,7 +57,7 @@ const SignIn = () => {
               <input
                 type="email"
                 name="email"
-                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium"
+                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium text-gray-700"
                 placeholder="Enter your email"
               />
               <MdOutlineMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -71,14 +71,14 @@ const SignIn = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium"
+                className="w-full appearance-none outline-none border border-gray-200 rounded-sm py-2 px-4 pl-8 text-sm font-medium text-gray-700"
                 placeholder="Enter your password"
               />
               <CiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
             <p
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-2 top-[32px] cursor-pointer"
+              className="absolute right-2 top-[32px] cursor-pointer text-gray-800"
             >
               {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
             </p>
@@ -90,7 +90,7 @@ const SignIn = () => {
                 name="terms"
                 className="mr-2 leading-tight"
               />
-              <label className="text-sm font-medium text-gray-500">
+              <label className="text-sm font-medium text-gray-600">
                 Remember me
               </label>
             </div>
@@ -105,7 +105,7 @@ const SignIn = () => {
             Sign In
           </button>
           <div className="flex items-center gap-2 text-sm justify-center">
-            <p>New To our Platform?</p>
+            <p className="text-gray-800">New To our Platform?</p>
             <Link className="text-red-950 font-semibold" to={"/sign-up"}>
               Sign Up Here
             </Link>

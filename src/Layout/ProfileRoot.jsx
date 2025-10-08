@@ -22,18 +22,18 @@ const ProfileRoot = () => {
     
     // console.log(pathname);
     return (
-        <div className='bg-gray-100 min-h-screen py-6 md:py-8 lg:py-10 px-3 md:px-16 lg:px-20'>
+        <div className='bg-gray-100 pt-6 md:pt-8 lg:pt-10 px-3 md:px-16 lg:px-20 pb-8 md:pb-14 lg:pb-20'>
             <div className='mb-6 md:mb-8 lg:mb-10'>
                 <h1 className='text-2xl md:text-3xl lg:text-4xl text-red-950'>Account Settings</h1>
-                <p className='text-sm text-gray-600'>Manage your accout preferences and information</p>
+                <p className='text-sm text-gray-700'>Manage your accout preferences and information</p>
             </div>
             <div className='flex justify-center flex-col md:flex-row items-start gap-5'>
                 <div className='w-full md:w-[40%] lg:w-[45%] bg-white rounded-sm p-4 shadow-md'>
                     <div className='flex items-center gap-6 border-b border-gray-300 pb-6'>
                         <img src={logo} alt="Logo" className='w-12 h-12 rounded-full border border-blue-500'/>
                         <div>
-                            <h2 className='text-xl font-semibold'>{`${profileInfo?.data?.personalInfo?.firstName} ${profileInfo?.data?.personalInfo?.lastName}`}</h2>
-                            <p className='text-gray-700 text-sm'>{user?.email}</p>
+                            <h2 className='text-xl font-semibold text-red-950'>{`${profileInfo.data ? profileInfo?.data?.personalInfo?.firstName + profileInfo?.data?.personalInfo?.lastName : "Your Name" }`}</h2>
+                            <p className='text-gray-800 text-sm'>{user?.email}</p>
                         </div>
                     </div>
                     <div className='mt-6 border-b border-gray-300 pb-6'>
@@ -41,7 +41,7 @@ const ProfileRoot = () => {
                             {
                                 profileLinks.map(link => 
                                     <li key={link?.id}>
-                                        <NavLink onClick={() => setIsActive(link?.route)} className={`${isActive === link?.route ? 'bg-gray-200 border border-gray-500' : ''} w-full flex items-center gap-3 py-2 px-3 rounded-sm`} to={`${link?.route}`} end>{link?.icon}{link?.title}</NavLink>
+                                        <NavLink onClick={() => setIsActive(link?.route)} className={`${isActive === link?.route ? 'bg-gray-200 border border-gray-500' : ''} w-full flex items-center gap-3 py-2 px-3 rounded-sm text-gray-900`} to={`${link?.route}`} end>{link?.icon}{link?.title}</NavLink>
                                     </li>
                                 )
                             }

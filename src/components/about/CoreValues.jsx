@@ -3,12 +3,12 @@ import coreValues from "../../data/CoreValues";
 
 const CoreValues = () => {
   return (
-    <div className="my-4 md:my-8 lg:my-14 justify-center gap-4 items-center mx-5 md:mx-14 lg:mx-28">
+    <div className="py-4 md:py-8 lg:py-14 justify-center gap-4 items-center px-5 md:px-14 lg:px-28 bg-gray-100">
       <div className="text-center space-y-1 md:space-y-2">
         <h1 className="text-red-950 text-2xl md:text-3xl lg:text-4xl font-semibold">
           Our Core Values
         </h1>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-800">
           The principle that guide everything we do a GUEHI and CO
         </p>
       </div>
@@ -16,7 +16,7 @@ const CoreValues = () => {
         {coreValues.map((value) => (
           <div
             key={value?.id}
-            className="p-5 border border-gray-300 rounded-lg shadow space-y-2"
+            className="p-5 border border-gray-300 rounded-lg shadow space-y-2 bg-white"
           >
             <p className="text-red-900 bg-gray-100 inline-block p-2 rounded-full">
               {value?.icon && <value.icon />}
@@ -24,7 +24,7 @@ const CoreValues = () => {
             <h2 className="text-red-900 text-md font-semibold">
               {value?.title}
             </h2>
-            <p className="text-sm">{value?.description}</p>
+            <p className="text-sm text-gray-700">{value?.description}</p>
           </div>
         ))}
       </div>

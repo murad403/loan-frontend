@@ -14,7 +14,7 @@ const HowItWorks = () => {
           <h1 className="text-xl font-bold md:text-2xl lg:text-4xl text-red-950">
             How It Works
           </h1>
-          <p className="text-sm">
+          <p className="text-sm text-gray-700">
             Get your credit score and suggested credit limit in just four simple
             steps
           </p>
@@ -23,9 +23,9 @@ const HowItWorks = () => {
             {
             howItWorksData.map(step =>(
                 <div key={step?.id} className="bg-white p-3 md:p-4 lg:p-5 rounded-sm space-y-1 shadow-md">
-                  <p className="bg-red-200 p-2 inline-block rounded-full">{step?.icon && <step.icon />}</p>
+                  <p className="bg-gray-200 p-2 inline-block rounded-full text-red-950">{step?.icon && <step.icon />}</p>
                     <h2 className="font-bold text-lg text-red-950">{step.title}</h2>
-                    <p className="text-sm text-gray-600">{step.description}</p>
+                    <p className="text-sm text-gray-800">{step.description}</p>
                 </div>
             ))
         }
@@ -34,7 +34,7 @@ const HowItWorks = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl text-red-950">Ready to discover your credit potential?</h2>
           <p className="text-gray-700">Get your credit score now and see what credit limit you qualify for. It's quick, <br /> free, and completely transparent.</p>
           <Link to={user?.role === "admin" ? "/lender" : profileInfo?.data ? "/dashboard" : user ? "/complete-profile" : "/sign-in"}>
-            <button className="bg-red-950 text-gray-400 py-2 px-4 rounded-md text-sm cursor-pointer">Get Your Credit Score</button>
+            <button className="bg-red-950 text-gray-200 py-2 px-4 rounded-md text-sm cursor-pointer">Get Your Credit Score</button>
           </Link>
         </div>
       </div>

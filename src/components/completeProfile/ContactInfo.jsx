@@ -19,27 +19,27 @@ const ContactInfo = ({step, setStep, setContactInfo}) =>{
             <h2 className="text-xl font-semibold text-red-950 mb-3">Contact Information</h2>
             <form onSubmit={handleContactInfo} className='mt-5 md:space-y-3 space-y-1'>
                 <div className='w-full'>
-                        <label className='text-sm font-medium text-gray-700 block'>Address</label>
-                        <input name='address' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"12 street road"} required/>
+                        <label className='text-sm font-medium text-gray-800 block'>Address</label>
+                        <input name='address' type="text" className=' text-gray-700 appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"12 street road"} required/>
                 </div>
                 <div className="grid md:grid-cols-3 gap-3 grid-cols-1">
                     <div>
-                        <label className='text-sm font-medium text-gray-700 block'>City</label>
-                        <input name='city' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"New York"} required/>
+                        <label className='text-sm font-medium text-gray-800 block'>City</label>
+                        <input name='city' type="text" className='appearance-none text-gray-700 px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"New York"} required/>
                     </div>
                     <div>
-                        <label className='text-sm font-medium text-gray-700 block'>State</label>
-                        <input name='state' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"NY"} required/>
+                        <label className='text-sm font-medium text-gray-800 block'>State</label>
+                        <input name='state' type="text" className='text-gray-700 appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"NY"} required/>
                     </div>
                     <div>
-                        <label className='text-sm font-medium text-gray-700 block'>ZIP Code</label>
-                        <input name='zip-code' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"5010"} required/>
+                        <label className='text-sm font-medium text-gray-800 block'>ZIP Code</label>
+                        <input name='zip-code' type="text" className='text-gray-700 appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder={"5010"} required/>
                     </div>
                 </div>
                 <div className="flex justify-between">
         <button
           onClick={() => setStep(step - 1)}
-          className="px-4 py-2 rounded bg-gray-300 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
+          className="px-4 py-2 rounded bg-gray-400 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
         >
           <MdArrowBackIosNew /> Back
         </button> 

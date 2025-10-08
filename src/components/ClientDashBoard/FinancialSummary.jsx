@@ -5,7 +5,7 @@ import { VscGraph } from "react-icons/vsc";
 const FinancialSummary = ({financialInfo, debitToIncomeRatio}) => {
     return (
         <div>
-            <h3 className='bg-gray-200 p-4 font-bold rounded-t-sm'>Financial Summary</h3>
+            <h3 className='bg-gray-300 text-black p-4 font-bold rounded-t-sm'>Financial Summary</h3>
             <div className='px-4 py-6 flex flex-col md:flex-row md:gap-7 gap-5 items-center'>
                 <div className="bg-gray-50 rounded-sm w-full items-center p-3 flex gap-2 border border-gray-300">
                     <div className="bg-green-200 p-2 rounded-full">

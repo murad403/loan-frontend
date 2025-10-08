@@ -22,7 +22,7 @@ const IndustrySolution = () => {
         {industrySolutions.map((solution) => (
           <div
             key={solution?.id}
-            className="p-5 border border-gray-300 rounded-lg shadow space-y-2"
+            className="p-5 border border-gray-300 rounded-lg shadow space-y-2 bg-white"
           >
             <p className="text-red-900 bg-gray-100 inline-block p-2 rounded-lg">
               {solution?.icon && <solution.icon />}
@@ -30,7 +30,7 @@ const IndustrySolution = () => {
             <h2 className="text-red-900 text-md font-semibold">
               {solution?.title}
             </h2>
-            <p className="text-sm">{solution?.description}</p>
+            <p className="text-sm text-gray-700">{solution?.description}</p>
           </div>
         ))}
         <div className="p-5 border border-gray-300 rounded-lg shadow space-y-2 bg-red-900 text-gray-300">
@@ -40,7 +40,7 @@ const IndustrySolution = () => {
             tailored to your specific business needs.
           </p>
           <Link to={user?.role === "admin" ? "/lender" : profileInfo?.data ? "/dashboard" : user ? "/complete-profile" : "/sign-in"} >
-            <button className="text-sm text-gray-700 bg-gray-300 px-3 flex items-center gap-2 py-1 rounded-sm cursor-pointer">Get Started as Client <FaLongArrowAltRight size={16} /></button>
+            <button className="text-sm text-gray-800 bg-gray-300 px-3 flex items-center gap-2 py-1 rounded-sm cursor-pointer">Get Started as Client <FaLongArrowAltRight size={16} /></button>
           </Link>
         </div>
       </div>

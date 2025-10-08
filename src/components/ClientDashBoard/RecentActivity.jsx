@@ -5,7 +5,7 @@ import { AiOutlineEye } from "react-icons/ai";
 const RecentActivity = () => {
     return (
         <div>
-            <h3 className='bg-gray-200 p-4 font-bold rounded-t-sm'>Recent Activity</h3>
+            <h3 className='bg-gray-300 text-black p-4 font-bold rounded-t-sm'>Recent Activity</h3>
             <div className='px-4 py-6 space-y-4'>
                 <div className="bg-gray-50 rounded-sm items-center justify-between p-3 flex gap-2 border border-gray-300">
                     <div className='flex items-center gap-3'>

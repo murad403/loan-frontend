@@ -1,3 +1,4 @@
+import { SlCalender } from "react-icons/sl";
 
 const PersonalInfo = ({step, setStep, setPersonalInfo}) =>{
 
@@ -20,22 +21,25 @@ const PersonalInfo = ({step, setStep, setPersonalInfo}) =>{
             <form onSubmit={handlePersonalInfo} className='mt-5 md:space-y-3 space-y-1'>
                 <div className='flex flex-col md:flex-row gap-3'>
                     <div className='w-full md:w-1/2'>
-                        <label className='text-sm font-medium text-gray-700 block'>First Name</label>
-                        <input required  name='first-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder="Enter your first name" />
+                        <label className='text-sm font-medium text-gray-800 block'>First Name</label>
+                        <input required  name='first-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700' placeholder="Enter your first name" />
                     </div>
                     <div className='w-full md:w-1/2'>
-                        <label className='text-sm font-medium text-gray-700 block'>Last Name</label>
-                        <input required name='last-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]' placeholder="Enter your last name" />
+                        <label className='text-sm font-medium text-gray-800 block'>Last Name</label>
+                        <input required name='last-name' type="text" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700' placeholder="Enter your last name" />
                     </div>
                 </div>
                 <div className='flex flex-col md:flex-row gap-3'>
-                    <div className='w-full md:w-1/2'>
-                        <label className='text-sm font-medium text-gray-700 block'>Date Of Birth</label>
-                        <input name='date-of-birth' required type="date" className='appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]'/>
+                    <div className='w-full md:w-1/2 relative'>
+                        <label className='text-sm font-medium text-gray-800 block'>Date Of Birth</label>
+                        <input name='date-of-birth' required type="date" className='px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700'/>
+                        <span className="absolute right-3 cursor-pointer top-8 text-gray-500 pointer-events-none">
+                            <SlCalender/>
+  </span>
                     </div>
                     <div className='w-full md:w-1/2'>
-                        <label className='text-sm font-medium text-gray-700 block'>Gender</label>
-                        <select name="gender" className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]">
+                        <label className='text-sm font-medium text-gray-800 block'>Gender</label>
+                        <select name="gender" className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px] text-gray-700">
                             <option value="male" defaultChecked>Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
@@ -44,7 +48,7 @@ const PersonalInfo = ({step, setStep, setPersonalInfo}) =>{
                 </div>
 
                 {/* button */}
-                <div className="flex justify-end">
+                <div className="flex justify-end mt-3">
                     <button
                       type="submit"
                       className="px-4 py-2 rounded bg-red-950 text-white disabled:opacity-50 cursor-pointer"

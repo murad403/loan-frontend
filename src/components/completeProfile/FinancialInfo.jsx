@@ -47,49 +47,49 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
       <form onSubmit={handleApplicationSubmit} className="mt-5 md:space-y-3 space-y-1">
         <div className="flex flex-col md:flex-row gap-3">
           <div className="w-full md:w-1/2">
-            <label className="text-sm font-medium text-gray-700 block">
+            <label className="text-sm font-medium text-gray-800 block">
               Annual Income (FCFA)
             </label>
             <input
               name="annual-income"
               type="number"
-              className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
+              className="appearance-none px-4 py-2 outline-none text-gray-700 border border-gray-400 w-full rounded-sm text-[15px]"
               required
             />
           </div>
           <div className="w-full md:w-1/2">
-            <label className="text-sm font-medium text-gray-700 block">
+            <label className="text-sm font-medium text-gray-800 block">
               Value of land ownership (FCFA)
             </label>
             <input
               name="value-of-land"
               type="number"
-              className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
+              className="appearance-none px-4 py-2 outline-none border text-gray-700 border-gray-400 w-full rounded-sm text-[15px]"
               required
             />
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-3">
           <div className="w-full md:w-1/2">
-            <label className="text-sm font-medium text-gray-700 block">
+            <label className="text-sm font-medium text-gray-800 block">
               Electricity bill (FCFA)
             </label>
             <input
               name="electricity-bill"
               type="number"
               required
-              className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
+              className="appearance-none px-4 py-2 outline-none border text-gray-700 border-gray-400 w-full rounded-sm text-[15px]"
             />
           </div>
           <div className="w-full md:w-1/2">
-            <label className="text-sm font-medium text-gray-700 block">
+            <label className="text-sm font-medium text-gray-800 block">
               Mobile money balance
             </label>
             <input
               name="mobile-money-balance"
               type="number"
               required
-              className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
+              className="appearance-none px-4 py-2 outline-none border text-gray-700 border-gray-400 w-full rounded-sm text-[15px]"
             />
           </div>
         </div>
@@ -102,9 +102,9 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
                 type="radio"
                 name="radio"
                 value={"yes"}
-                className="radio radio-sm text-red-950"
+                className="radio radio-sm border border-gray-700"
               />
-              <p className="text-sm">Yes</p>
+              <p className="text-sm text-gray-800">Yes</p>
             </div>
             <div className="flex items-center gap-2">
               <input
@@ -112,9 +112,9 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
                 onChange={(e) => setExistingLoan(e.target.value)}
                 name="radio"
                 value={"no"}
-                className="radio radio-sm text-red-950"
+                className="radio radio-sm border border-gray-700"
               />
-              <p className="text-sm">No</p>
+              <p className="text-sm text-gray-800">No</p>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
                 name="existing-loan"
                 type="number"
                 required
-                className="appearance-none px-4 py-2 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
+                className="appearance-none px-4 py-2 text-gray-700 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
                 placeholder="Enter your first name"
               />
             </div>
@@ -136,7 +136,7 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
         </div>
         <div className="flex items-center mt-7">
           <input type="checkbox" name="terms" className="mr-2 leading-tight" />
-          <label className="text-sm font-medium text-gray-500">
+          <label className="text-sm font-medium text-gray-800">
             I agree to share my data with GUEHI AND CO to process my credit
             score
           </label>
@@ -144,7 +144,7 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
         <div className="flex justify-between">
               <button
                 onClick={() => setStep(step - 1)}
-                className="px-4 py-2 rounded bg-gray-300 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
+                className="px-4 py-2 rounded bg-gray-400 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
               >
                 <MdArrowBackIosNew /> Back
               </button> 
