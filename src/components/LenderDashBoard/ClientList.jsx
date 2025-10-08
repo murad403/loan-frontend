@@ -17,7 +17,7 @@ const ClientList = ({clientList}) => {
         </button>
       </div>
       {/* name of each tab group should be unique */}
-<div className="tabs text-red-950 space-x-4">
+<div className="tabs text-red-950 space-x-4 space-y-4">
   <input type="radio" name="my_tabs_2" className="tab bg-gray-400 rounded-lg" aria-label="All Clients" defaultChecked/>
   <div className="tab-content p-10">
     <AllClients allClients={clientList.allClients}></AllClients>
