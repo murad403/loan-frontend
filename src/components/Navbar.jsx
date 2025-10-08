@@ -41,7 +41,7 @@ const Navbar = () => {
 
         {/* responsive menu------------------------------------- */}
         <button
-          className="cursor-pointer md:hidden"
+          className="cursor-pointer md:hidden text-gray-900"
           onClick={() => setMenu(!menu)}
         >
           <RiMenu2Line size={20} />
@@ -49,7 +49,7 @@ const Navbar = () => {
       </div>
       <div className={menu ? "block md:hidden" : "hidden"}>
         <div className="relative">
-          <ul className="text-[14px] text-gray-600 w-full absolute top-0 right-0 bg-gray-200 px-7 py-4 z-10">
+          <ul className="text-[14px] text-gray-600 w-full absolute top-0 right-0 bg-white px-7 py-4 z-10">
             <li>
               <NavLink to="/" onClick={() => setMenu(false)}>Home</NavLink>
             </li>
