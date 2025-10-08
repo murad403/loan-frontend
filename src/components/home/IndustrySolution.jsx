@@ -13,7 +13,7 @@ const IndustrySolution = () => {
         <h1 className="text-xl font-bold md:text-2xl lg:text-4xl text-red-950">
           Our Industry Solutions
         </h1>
-        <p className="text-sm">
+        <p className="text-sm text-gray-800">
           We provide specialized lending solutions across multiple industries,
           tailored to meet the unique needs of each sector{" "}
         </p>
