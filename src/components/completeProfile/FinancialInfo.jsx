@@ -129,7 +129,7 @@ const FinancialInfo = ({step, setStep, personalInfo, contactInfo}) => {
                 type="number"
                 required
                 className="appearance-none px-4 py-2 text-gray-700 outline-none border border-gray-400 w-full rounded-sm text-[15px]"
-                placeholder="Enter your first name"
+                placeholder="Enter your existing loan amount here"
               />
             </div>
           )}
